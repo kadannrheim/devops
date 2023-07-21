@@ -55,7 +55,8 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/miniku
 # Чтобы исполняемый файл Minikube был доступен из любой директории выполните следующие команды:
 sudo mkdir -p /usr/local/bin/
 sudo install minikube /usr/local/bin/
-
+# Стартуем minikube
+minikube start --driver=docker
 
 # Вручную после установки
 # 3. Если вы не хотите каждый раз вводить sudo при запуске команды docker, добавьте свое имя пользователя в группу docker:
