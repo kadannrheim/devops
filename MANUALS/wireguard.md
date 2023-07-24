@@ -5,7 +5,7 @@
 # Для того, чтобы пакеты перенаправлялись туда, куда надо, нужно разрешить перенаправление сетевых пакетов на уровне ядра. Для этого откройте файл /etc/sysctl.conf и добавьте в конец такие строки:
  - `sudo nano /etc/sysctl.conf`
  ```
- net.ipv4.ip_forward = 1
+net.ipv4.ip_forward = 1
 net.ipv6.conf.default.forwarding = 1
 net.ipv6.conf.all.forwarding = 1
 net.ipv4.conf.all.rp_filter = 1
@@ -29,6 +29,7 @@ AllowedIPs = 0.0.0.0/0,::/0 -IP адреса, трафик с которых б�
 ```
 # Программа использует UDP, нужно разрешить подключение к этому порту
 sudo ufw allow 63665/udp
+# udo ufw allow  51820/udp
 sudo ufw status
 # Запуск сервера
 `sudo wg-quick up wg0`
@@ -41,3 +42,4 @@ sudo ufw status
 # Автоматический с web интерфейсом по скрипту
 bash <(curl -Ls https://github.com/firezone/firezone/raw/master/scripts/install.sh)
 
+ygg54QQFR43E32LP OLNIO GG CRFGHT 0L.;-0
