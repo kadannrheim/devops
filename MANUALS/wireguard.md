@@ -32,11 +32,11 @@ sudo ufw allow 63665/udp
 # udo ufw allow  51820/udp
 sudo ufw status
 # Запуск сервера
-`sudo wg-quick up wg0`
+`sudo wg-quick up server`
 # Gосмотреть статистику по подключению с помощью команды
 `sudo wg show`
 # Отключить соединение
-`sudo wg-quick down wg0`
+`sudo wg-quick down server`
 
 
 # Автоматический с web интерфейсом по скрипту
