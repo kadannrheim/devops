@@ -9,10 +9,21 @@ https://kubernetes.io/docs/concepts/services-networking/service/#proxy-mode-user
 
 # Практическое задание 2
 
-1. Собрать docker image на базе Dockerfile и файла app.py 
-
+1. Собрать docker image на базе Dockerfile и файла app.py  https://docs.docker.com/language/python/build-images/ 
+`docker build --tag python-docker`
+Смотри образы
+`docker images`
+Можно так же тэг повесить
+`docker tag python-docker:latest kadannr/python-docker:v1.0.0`
+```
+vagrant@us22minikube1vg:~/C:inshare/task2$ docker images
+REPOSITORY              TAG       IMAGE ID       CREATED          SIZE
+kadannr/python-docker   v1.0.0    328090815736   43 minutes ago   51.8MB
+python-docker           latest    328090815736   43 minutes ago   51.8MB 
+```
 2. После сборки разместить образ на своем акаунте Dockerhub
-
+`docker login` =вписываем свои данный от сайта https://hub.docker.com/
+`docker push kadannr/python-docker:v1.0.0`
 3. Создать secret объект с credentials от dockerhub и именем pull-secret
 
 4. Создать YAML файл deployment.yaml 
