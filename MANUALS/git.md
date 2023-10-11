@@ -23,7 +23,7 @@ git --version
 
 `git config --global user.name "kadannrheim"`
 `git config --global user.email "kadannr@gmail.com"`
-`git config --global core.editor emacs` -установить редактор на умолчанию
+`git config --global core.editor vim` -установить редактор на умолчанию
 
 или
 тоже самое в конфигурационном файле `nano ~/.gitconfig`
