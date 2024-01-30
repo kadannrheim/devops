@@ -13,7 +13,7 @@ https://kubernetes.io/docs/concepts/services-networking/service/#proxy-mode-user
 `docker build --tag python-docker`
 Смотри образы
 `docker images`
-Можно так же тэг повесить
+Можно так же тэг повесить имяпользователя/название:тэг
 `docker tag python-docker:latest kadannr/python-docker:v1.0.0`
 ```
 vagrant@us22minikube1vg:~/C:inshare/task2$ docker images
