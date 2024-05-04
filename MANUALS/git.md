@@ -195,3 +195,4 @@ git branch -f main HEAD~3   -Переместит (принудительно) �
 >* main
 `git branch --no-merged`
 >pre
+ 
