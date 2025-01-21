@@ -8,7 +8,10 @@ WORKDIR /app
 COPY . .
 
 # Загружаем зависимости и компилируем приложение
-RUN go mod tidy && go build -o backend .
+RUN go mod init backend \
+    && go get github.com/lib/pq \
+    && go mod tidy \
+    && go build -o backend .
 
 # Указываем команду для запуска приложения
 CMD ["./backend"]

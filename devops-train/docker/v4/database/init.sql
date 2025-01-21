@@ -1,3 +1,7 @@
+-- Создание пользователя postgres
+CREATE ROLE postgres WITH LOGIN PASSWORD 'password';
+ALTER ROLE postgres CREATEDB;
+
 -- Создание таблицы для хранения пользователей
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,         -- Уникальный идентификатор пользователя
