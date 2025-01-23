@@ -1,7 +1,3 @@
--- Создание пользователя postgres
-CREATE ROLE postgres WITH LOGIN PASSWORD 'password';
-ALTER ROLE postgres CREATEDB;
-
 -- Создание таблицы для хранения пользователей
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,         -- Уникальный идентификатор пользователя
@@ -11,6 +7,6 @@ CREATE TABLE users (
 
 -- Вставка начальных данных
 INSERT INTO users (name, email) VALUES
-('Alice', 'alice@example.com'),
-('Bob', 'bob@example.com'),
-('Charlie', 'charlie@example.com');
+('Kirrill', 'kirrill@example.com'),
+('Platon', 'platon@example.com'),
+('Mefodiy', 'mefodiy@example.com');

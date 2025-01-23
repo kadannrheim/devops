@@ -29,7 +29,7 @@ func connectToDB() {
 		os.Getenv("DB_PASSWORD"),
 		os.Getenv("DB_NAME"),
 	)
-
+	fmt.Println(connStr)  // выводит пустые значения для отладки при сборке
 	db, err = sql.Open("postgres", connStr)
 	if err != nil {
 		log.Fatalf("Ошибка подключения к базе данных: %v", err)
