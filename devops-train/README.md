@@ -1,4 +1,10 @@
 # Практикум по DevOps
+## Установка Docker
+https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+## Установка lazydocker
+https://lindevs.com/install-lazydocker-on-ubuntu
+
+Структура обучения
 + Docker
     + Установка и эксплуатация
     + Работа с контейренами
