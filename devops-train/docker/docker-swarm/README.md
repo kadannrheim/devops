@@ -1,3 +1,5 @@
+# Docker swarm общая информация
+
 ## Инициализация
 `docker swarm init --advertise-addr <ip address>`
 Далле будет команда на подключение нод в выводе
@@ -56,6 +58,7 @@ networks:
 ```
 После создания файла docker-compose.yml, можно развернуть этот стек в кластере Docker Swarm используя команду:
 `docker stack deploy -c docker-compose.yaml my_stack_name`
+
 ## Если траблы, смотрим логи:
 `docker service logs my_stack_name_web`
 

@@ -1,9 +1,4 @@
-# Практикум по DevOps
-## Установка Docker
-https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
-## Установка lazydocker
-https://lindevs.com/install-lazydocker-on-ubuntu
-
+# Практикум по DevOps, общая информация по обучению
 Структура обучения
 + Docker
     + Установка и эксплуатация
@@ -18,15 +13,3 @@ https://lindevs.com/install-lazydocker-on-ubuntu
     + Безопастность в Docker и сканер trivy
     + Docker compose
     + Docker Swarm
-
-
-# Docker
-## Если нужно заходить по http
-`sudo vim /etc/docker/daemon.json`
-```
-{
-  "insecure-registries": ["192.168.1.123"]
-}
-```
-`sudo systemctl restart docker`
-Поды после этого придётся скорей всего переподнять, у меня часть из них не встаёт после перезапуска докера. Поэтому перед перезапуском лучше их потушить.

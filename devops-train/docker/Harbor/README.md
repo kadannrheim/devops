@@ -18,13 +18,16 @@ Trivy — инструмент для сканирования уязвимос�
 # Установка
 `sudo ./install.sh --with-trivy`
 
-## Загрузка образа
-`docker login <your-server-ip>`
+## Загрузка образа в harbor
 Введите admin и пароль
-Пример на nginx, загружем
+`docker login <your-server-ip>`
+
+Далее пример на nginx, загружем
 `docker pull nginx:alpine`
+
 Тэгируем наш образ
 `docker tag nginx:alpine <your-server-ip>/library/nginx_alpine`
+
 Отправка образов в Harbor (мы уже авторизировались выше)
 `docker push <your-server-ip>/library/nginx_alpine`
 
@@ -33,8 +36,6 @@ https://computingforgeeks.com/install-harbor-image-registry-on-ubuntu/
 https://itshaman.ru/articles/3117/kak-ustanovit-harbor-docker-image-registry-na-ubuntu-2204
 
 # troubleshooting
-##
-##
 ##
 
 
