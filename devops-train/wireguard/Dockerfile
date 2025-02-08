@@ -11,7 +11,7 @@ FROM ghcr.io/wg-easy/wg-easy:latest
 
 # Устанавливаем переменные окружения (если нужно)
 ENV WG_HOST=${WG_HOST}
-ENV PASSWORD_HASH=$2a$14$lOCTdM.4slPrIAjcsbjYrOc5pzbpNO/neGZdIj9w2/5Smek7hqXMC
+ENV PASSWORD_HASH=${PASSWORD_HASH}
 
 # Открываем порты
 EXPOSE 51820/udp
