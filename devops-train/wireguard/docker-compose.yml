@@ -5,7 +5,7 @@ services:
     container_name: ${CONTAINER_NAME}
     environment:
       - WG_HOST=${WG_HOST}  # Ваш IP-адрес
-      - PASSWORD=${PASSWORD}  # Пароль для доступа к веб-интерфейсу
+      - PASSWORD_HASH=${PASSWORD_HASH}  # Пароль для доступа к веб-интерфейсу
     volumes:
       - ${CONFIG_DIR}:/etc/wireguard  # Храним конфигурацию WireGuard на хосте
     ports:
