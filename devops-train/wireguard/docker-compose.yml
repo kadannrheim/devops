@@ -3,12 +3,12 @@ services:
   wireguard:
     build: .  # Собираем образ из Dockerfile
     # image: ghcr.io/wg-easy/wg-easy:latest  # или Используем официальный образ wg-easy
-    container_name: wg-easy
+    container_name: ${CONTAINER_NAME}
     environment:
-      - WG_HOST=my_ip  # Ваш IP-адрес
-      - PASSWORD=my_secure_password  # Пароль для доступа к веб-интерфейсу
+      - WG_HOST=${WG_HOST}  # Ваш IP-адрес
+      - PASSWORD=${PASSWORD}  # Пароль для доступа к веб-интерфейсу
     volumes:
-      - ./config/wg-easy:/etc/wireguard  # Храним конфигурацию WireGuard на хосте
+      - ${CONFIG_DIR}:/etc/wireguard  # Храним конфигурацию WireGuard на хосте
     ports:
       - "51820:51820/udp"  # Порт для WireGuard (UDP)
       - "51821:51821/tcp"  # Порт для веб-интерфейса (TCP)

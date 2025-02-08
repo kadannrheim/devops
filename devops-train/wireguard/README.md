@@ -2,10 +2,11 @@
 
 ## Структура
 wireguard-ui/
+├── .env
 ├── docker-compose.yml
-├── Dockerfile (опционально)
-└── config/
-    └── wg-easy/
-        ├── wg0.conf
-        ├── privatekey
-        └── другие_файлы_конфигурации
+├── Dockerfile
+# └── config/
+#    └── wg-easy/
+#        ├── wg0.conf
+#        ├── privatekey
+#        └── другие_файлы_конфигурации
