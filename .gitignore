@@ -1,0 +1,23 @@
+#Добавление в игнор временных - локальных файлов terraform
+# Игнорировать папку .terraform
+.terraform/
+
+# Игнорировать файлы состояния Terraform
+*.tfstate
+*.tfstate.*
+
+# Игнорировать файлы блокировки Terraform
+.terraform.lock.hcl
+
+# Игнорировать crash.log (если есть)
+crash.log
+
+# Игнорировать планы Terraform
+*.tfplan
+
+# Игнорировать файлы переменных (если используются)
+*.tfvars
+
+# Игнорировать локальные файлы конфигурации
+.terraformrc
+terraform.rc
