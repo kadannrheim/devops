@@ -27,6 +27,9 @@ https://developer.hashicorp.com/terraform/install#linux
 `terraform init` -инициализация terraform
 `terraform plan` -проверка плана выполнения
 `terraform apply` -применение конфигурации
+`terraform init -migrate-state` -init с ключем -migrate-state, чтобы смигрировать наш 
+стейт в новое место
+`terraform import aws_s3_bucket.bucket-2 devopstrain-learning-bucket-2` -импорт в terraform на примере aws
 
 ## Управляющие комнады AWS
 
