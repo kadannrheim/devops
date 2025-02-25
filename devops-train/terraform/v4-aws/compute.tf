@@ -36,11 +36,16 @@ resource "aws_key_pair" "keypair" {
 # Для добавления внешнего IP-адреса (Elastic IP) к виртуальной машине и подключения к ней через SSH
 # Создание Elastic IP
 resource "aws_eip" "vm_eip" {
-  vpc = true
+  domain = "vpc"  # Заменил vpc = true на domain = "vpc" , бест практик новый
 }
 
 # Связывание Elastic IP с виртуальной машиной
 resource "aws_eip_association" "vm_eip_assoc" {
   instance_id   = aws_instance.first-vm.id
   allocation_id = aws_eip.vm_eip.id
+}
+
+# Вывод публичного ip адреса
+output "public_ip" {
+  value = aws_eip.vm_eip.public_ip
 }
