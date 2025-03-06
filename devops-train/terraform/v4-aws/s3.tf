@@ -1,14 +1,15 @@
 resource "aws_s3_bucket" "bucket" {
-  bucket = "devopstrain-bucket-kadannr" // Измените это имя слегка, т.к. оно должно быть уникальным 
+  bucket = "devopstrain-bucket-kadann-3" // Измените это имя слегка, т.к. оно должно быть уникальным 
     tags = {
     Name        = "My bucket"
     Environment = "Dev"
   }
 }
 # добавляем ещё один ресурс
-resource "aws_s3_bucket" "bucket-2" {
-  bucket = "devopstrain-bucket-kadannr-2" // Измените это имя слегка, т.к. оно должно быть уникальным 
-}
+#resource "aws_s3_bucket" "bucket-2" {
+#  bucket = "devopstrain-bucket-kadannr-3" // Измените это имя слегка, т.к. оно должно быть уникальным 
+#}
+
 # Используем рекомендованный bucket policy вместо ACL
 # и настраиваем bucket policy без публичного доступа
 resource "aws_s3_bucket_policy" "bucket_policy" {

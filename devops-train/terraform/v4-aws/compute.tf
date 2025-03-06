@@ -19,7 +19,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "first-vm" {
-  provider = aws.us_east_2  # Указываем провайдер для этого ресурса
+  provider = aws.eu_west_2  # Указываем провайдер для этого ресурса
   ami           = data.aws_ami.ubuntu-2204.id
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.subnet_a.id 
