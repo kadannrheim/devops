@@ -23,5 +23,5 @@ crash.log
 terraform.rc
 
 # Игнорировать ключи подключения
-.pem
-.pub
+*.pem
+*.pub
