@@ -11,15 +11,7 @@ data "aws_ami" "ubuntu-2204" {
   owners = ["099720109477"] # Canonical
 }
 
-# Прописываем регион для инстансов
-# Провайдер для региона eu-west-2
-provider "aws" {
-  alias  = "eu_west_2"
-  region = "eu-west-2"
-}
-
 resource "aws_instance" "first-vm" {
-  provider = aws.eu_west_2  # Указываем провайдер для этого ресурса
   ami           = data.aws_ami.ubuntu-2204.id
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.subnet_a.id 
