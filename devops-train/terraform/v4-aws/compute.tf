@@ -49,3 +49,18 @@ resource "aws_eip_association" "vm_eip_assoc" {
 output "public_ip" {
   value = aws_eip.vm_eip.public_ip
 }
+
+# Подключение диска. Первый диск загрузочный, поэтому для данных лучше использовать secondary disk, чтобы в любой момент было возможно отключить от ВМ и подключить к другой
+resource "aws_ebs_volume" "secondary-disk-first-vm" {
+  availability_zone = aws_instance.first-vm.availability_zone
+  size              = 20
+  tags = {
+    Name = "disk-name"
+  }
+}
+
+resource "aws_volume_attachment" "ebs_att" {
+  device_name = "/dev/sdh"
+  volume_id   = aws_ebs_volume.secondary-disk-first-vm.id
+  instance_id = aws_instance.first-vm.id
+}

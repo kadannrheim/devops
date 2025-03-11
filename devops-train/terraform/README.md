@@ -1,4 +1,10 @@
 # Описание настройки terraform на AWS
+# План:
+1. Настройка локальной машины
+2. Подключение AWS
+3. Создание конфига и перенос файлов terraform на AWS
+4. Создание инстанца и подключение к нему по ssh
+5. Создание диска, форматирование и монтирование в ОС
 
 ## Установка вручную (использовался данный способ)
 1. Скачиваем нужный файл (AMD64) и `unzip имя_архива` его
@@ -31,6 +37,7 @@ https://developer.hashicorp.com/terraform/install#linux
 стейт в новое место
 `terraform import aws_s3_bucket.bucket-2 devopstrain-learning-bucket-2` -импорт в terraform на примере aws
 `terraform output public_ip` -вывод пуличного ip адреса
+`terraform apply -destroy -target=aws_instance.first-vm` -удалить созданную ВМ
 
 ## Управляющие комнады AWS
 
@@ -72,7 +79,7 @@ https://developer.hashicorp.com/terraform/install#linux
 └─ $ nc -zv 13.42.217.67 22 
 Connection to 13.42.217.67 22 port [tcp/ssh] succeeded!
 ```
-есть нет то проверяем на ui (пример ниже).
+есть нет, то проверяем на ui (пример ниже).
 
 
 4. Пробуем подключиться, используя секретный ключ (публичный на удалённой машине в инстанце):
