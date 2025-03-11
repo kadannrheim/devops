@@ -29,7 +29,7 @@ resource "aws_instance" "first-vm" {
 }
 
 resource "aws_key_pair" "keypair" {
-  key_name   = "example-key"
+  key_name   = "key_for_ssh"
   public_key = file("~/.ssh/id_rsa.pub")
 }
 
