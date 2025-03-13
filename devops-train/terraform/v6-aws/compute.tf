@@ -90,3 +90,38 @@ resource "aws_volume_attachment" "ebs_att" {
   volume_id   = aws_ebs_volume.secondary-disk-first-vm[each.key].id  # Обращаемся по ключу
   instance_id = aws_instance.first-vm[each.key].id  # Обращаемся по ключу
 }
+
+
+#lifecycle rules для одного из наших бакетов, таким образом, чтобы происходило автоматическое удаление объектов спустя 30 дней, а для логов через 90 дней
+resource "aws_s3_bucket" "bucket-2" {
+  bucket = "devopstrain-bucket-kadann-3" // Имя должно быть таким как вы указывали ранее
+
+  tags = local.common_tags
+}
+
+# Управление версионированием new
+  resource "aws_s3_bucket_versioning" "bucket-2-versioning" {
+  bucket = aws_s3_bucket.bucket-2.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+# Управление жизненным циклом new
+resource "aws_s3_bucket_lifecycle_configuration" "bucket-2-lifecycle" {
+  bucket = aws_s3_bucket.bucket-2.id  # Ссылка на созданный бакет
+
+  rule {
+    id     = "log"
+    status = "Enabled"
+
+     filter {
+      prefix = "logs/"  # Применяем правило только к объектам с префиксом "logs/"
+     }
+    transition {
+      days          = 30
+      storage_class = "GLACIER"
+    }
+  }
+}

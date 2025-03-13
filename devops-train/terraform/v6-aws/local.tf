@@ -11,3 +11,11 @@ resource "local_file" "example" {
     key2 = data.external.example.result.desc
   })
 }
+
+locals {
+  common_tags = {
+    Environment = "Production"
+    Project     = "MyProjectTrain"
+    Owner       = "kadannr"
+  }
+}

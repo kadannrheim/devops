@@ -34,3 +34,19 @@ variable "instance_types" {
   type    = list(string)
   default = ["t2.micro", "t2.small"]  # Первый инстанс будет t2.micro, второй - t2.small
 }
+
+#переменная для проивзольного количества одинаковых блоков, но с разными параметрами
+variable "bucket_lifecycle_rules" {
+  default = [
+    {
+      id     = "tmp",
+      prefix = "/tmp"
+      expiration_days  = 30
+    },
+    {
+      id     = "log",
+      prefix = "/log"
+      expiration_days  = 90
+    }
+  ]
+}
