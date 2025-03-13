@@ -38,6 +38,7 @@ https://developer.hashicorp.com/terraform/install#linux
 `terraform import aws_s3_bucket.bucket-2 devopstrain-learning-bucket-2` -импорт в terraform на примере aws
 `terraform output public_ip` -вывод пуличного ip адреса
 `terraform apply -destroy -target=aws_instance.first-vm` -удалить созданную ВМ
+`terraform plan -var-file=terraform.tfvars` - запуск с указанием файла с значениями переменных (разные файлы для разных сборок можно использовать)
 
 ## Управляющие комнады AWS
 

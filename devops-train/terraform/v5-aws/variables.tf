@@ -1,7 +1,7 @@
 variable "filename" {
   description = "Name of file for the output"
   type        = string #указываем тип
-  #default = "output.txt" значения перенёс в terraform.tfvars
+  default = "output.txt"
 }
 
 variable "state_bucket" {
@@ -26,8 +26,3 @@ variable "subnet_params" {
     #cidr = "10.5.0.0/24"
   }
 #}
-
-variable "instances" {
-  type    = list
-  default = ["instance-1", "instance-2"]
-}

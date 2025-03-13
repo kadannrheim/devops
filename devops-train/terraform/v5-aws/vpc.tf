@@ -10,11 +10,9 @@ resource "aws_vpc" "main" {
 
 resource "aws_subnet" "subnet_a" {
   vpc_id     = aws_vpc.main.id
-  #cidr_block = "10.5.0.0/24"
-  #availability_zone = "eu-west-2a"
-  cidr_block        = var.subnet_params.cidr  # Используем поле cidr из subnet_params
-  availability_zone = var.subnet_params.zone  # Используем поле zone из subnet_params
-
+  cidr_block = "10.5.0.0/24"
+  availability_zone = "eu-west-2a"
+  
   tags = {
     Name = "subnet_1"
   }
