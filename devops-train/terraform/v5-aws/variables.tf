@@ -1,7 +1,6 @@
 variable "filename" {
   description = "Name of file for the output"
   type        = string #указываем тип
-  default = "output.txt"
 }
 
 variable "state_bucket" {
@@ -20,9 +19,9 @@ variable "subnet_params" {
       zone    = string
       cidr = string
   })
-#значения перенёс в terraform.tfvars
-  #default = {
-    #zone = "ru-central1-a"
-    #cidr = "10.5.0.0/24"
   }
-#}
+#добавляем переменную для создания нескольких машин
+variable "instances" {
+  type    = list
+  default = ["instance-1", "instance-2"]
+}

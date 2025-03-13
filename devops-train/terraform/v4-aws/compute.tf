@@ -19,8 +19,7 @@ resource "aws_instance" "first-vm" {
   key_name      = aws_key_pair.keypair.key_name   
 
   tags = {
-    #Name = "first-vm" -переделал на имя по инжексу
-    Name = var.instances[count.index] #теперь имя произвольное берётся из списка по индексу
+    Name = "first-vm"
   }
 
   user_data = <<-EOF

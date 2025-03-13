@@ -26,8 +26,3 @@ variable "subnet_params" {
     #cidr = "10.5.0.0/24"
   }
 #}
-
-variable "instances" {
-  type    = list
-  default = ["instance-1", "instance-2"]
-}

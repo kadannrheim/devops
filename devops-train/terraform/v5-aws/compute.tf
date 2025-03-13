@@ -12,13 +12,17 @@ data "aws_ami" "ubuntu-2204" {
 }
 
 resource "aws_instance" "first-vm" {
-  ami           = data.aws_ami.ubuntu-2204.id
-  instance_type = "t2.micro"
-  subnet_id     = aws_subnet.subnet_a.id 
-  key_name      = aws_key_pair.keypair.key_name   
-
+  ami           = data.aws_ami.ubuntu-2204.id  # Указываем AMI
+  instance_type = "t2.micro"                   # Указываем тип инстанса
+  subnet_id     = aws_subnet.subnet_a.id       # Указываем подсеть
+  key_name      = aws_key_pair.keypair.key_name  # Указываем ключевую пару
+  
+  count = length(var.instances) #добавляем счётчик для создания нескольких машин по индексу
   tags = {
-    Name = "first-vm"
+    Name = var.instances[count.index]  
+  #переводи на создание имени по индексу
+  #tags = {
+    #Name = "first-vm"
   }
 
   user_data = <<-EOF
@@ -41,7 +45,7 @@ resource "aws_eip" "vm_eip" {
 
 # Связывание Elastic IP с виртуальной машиной
 resource "aws_eip_association" "vm_eip_assoc" {
-  instance_id   = aws_instance.first-vm.id
+  instance_id   = aws_instance.first-vm[0].id # Привязываем к первому инстансу
   allocation_id = aws_eip.vm_eip.id
 }
 
@@ -52,15 +56,18 @@ output "public_ip" {
 
 # Подключение диска. Первый диск загрузочный, поэтому для данных лучше использовать secondary disk, чтобы в любой момент было возможно отключить от ВМ и подключить к другой
 resource "aws_ebs_volume" "secondary-disk-first-vm" {
-  availability_zone = aws_instance.first-vm.availability_zone
+  #availability_zone = aws_instance.first-vm.availability_zone
+  availability_zone = aws_instance.first-vm[count.index].availability_zone  #тоже добавляем [count.index] имя по индексу
   size              = 20
-  tags = {
-    Name = "disk-name"
+  count             = length(aws_instance.first-vm) #добавляем счетчик для имени по индексу
+  #tags = {
+  #  Name = "disk-name"
   }
-}
+
 
 resource "aws_volume_attachment" "ebs_att" {
+  count       = length(aws_instance.first-vm)  #добавляем счетчик для имени по индексу
   device_name = "/dev/sdh"
-  volume_id   = aws_ebs_volume.secondary-disk-first-vm.id
-  instance_id = aws_instance.first-vm.id
+  volume_id   = aws_ebs_volume.secondary-disk-first-vm[count.index].id #тоже добавляем [count.index] имя по индексу
+  instance_id = aws_instance.first-vm[count.index].id  #тоже добавляем [count.index] имя по индексу
 }
