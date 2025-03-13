@@ -31,6 +31,7 @@ https://developer.hashicorp.com/terraform/install#linux
 ## Управляющие команды terraform:
 
 `terraform init` -инициализация terraform
+`terraform init -upgrade` -обновление уже инициализированного
 `terraform plan` -проверка плана выполнения
 `terraform apply` -применение конфигурации
 `terraform init -migrate-state` -init с ключем -migrate-state, чтобы смигрировать наш 

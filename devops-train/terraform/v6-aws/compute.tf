@@ -91,13 +91,19 @@ resource "aws_volume_attachment" "ebs_att" {
   instance_id = aws_instance.first-vm[each.key].id  # Обращаемся по ключу
 }
 
+# для уникального имени бакета
+resource "random_id" "bucket_suffix" {
+  byte_length = 8
+}
+
 
 #lifecycle rules для одного из наших бакетов, таким образом, чтобы происходило автоматическое удаление объектов спустя 30 дней, а для логов через 90 дней
 resource "aws_s3_bucket" "bucket-2" {
-  bucket = "devopstrain-bucket-kadann-3" // Имя должно быть таким как вы указывали ранее
-
+  #bucket = "devopstrain-bucket-kadann-3" // Имя должно быть таким как вы указывали ранее
+  bucket = "my-unique-bucket-name-2-${var.unique_suffix}"  # Добавьте уникальный суффикс#или можно сделать уникальным используя идентификатор
   tags = local.common_tags
 }
+
 
 # Управление версионированием new
   resource "aws_s3_bucket_versioning" "bucket-2-versioning" {

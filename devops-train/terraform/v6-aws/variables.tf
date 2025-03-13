@@ -50,3 +50,9 @@ variable "bucket_lifecycle_rules" {
     }
   ]
 }
+
+#для генерации имени бакета
+variable "unique_suffix" {
+  type    = string
+  default = "default-suffix"  # Укажите значение по умолчанию или оставьте его пустым
+}
