@@ -20,10 +20,14 @@ variable "subnet_params" {
       cidr = string
   })
   }
-#добавляем переменную для создания нескольких машин
+
+#вариант с map, где конфигурации отличаются
 variable "instances" {
-  type    = list
-  default = ["instance-1", "instance-2"]
+  type = map
+  default = {
+    instance1 = "t2.micro"
+    instance2 = "t3.micro"
+  }
 }
 
 variable "instance_types" {

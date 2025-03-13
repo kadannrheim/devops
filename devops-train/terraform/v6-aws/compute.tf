@@ -12,20 +12,14 @@ data "aws_ami" "ubuntu-2204" {
 }
 
 resource "aws_instance" "first-vm" {
-  ami           = data.aws_ami.ubuntu-2204.id  # Указываем AMI
-  #instance_type = "t2.micro"                   # Указываем тип инстанса один на всех
-  subnet_id     = aws_subnet.subnet_a.id       # Указываем подсеть
-  key_name      = aws_key_pair.keypair.key_name  # Указываем ключевую пару
-  
-  count = length(var.instances) #добавляем счётчик для создания нескольких машин по индексу
+  for_each      = var.instances  # Используем map с ключами instance1, instance2
+  ami           = data.aws_ami.ubuntu-2204.id
+  instance_type = each.value     # Берём значение из map (например, "t2.micro")
+  subnet_id     = aws_subnet.subnet_a.id
+  key_name      = aws_key_pair.keypair.key_name
   tags = {
-    Name = var.instances[count.index]  
-  #переводи на создание имени по индексу
-  #tags = {
-    #Name = "first-vm"
+    Name = each.key  # Назначаем имя по ключу (instance1, instance2)
   }
-  instance_type = var.instance_types[count.index]  # Устанавливаем тип инстанса по индексу
-
   user_data = <<-EOF
               #!/bin/bash
               echo "foo=bar" >> /etc/environment
@@ -44,31 +38,55 @@ resource "aws_eip" "vm_eip" {
   domain = "vpc"  # Заменил vpc = true на domain = "vpc" , бест практик новый
 }
 
+#добавляем для варианта с разными конфигурациями
+resource "aws_eip" "eip" {
+  for_each = var.instances
+}
+
 # Связывание Elastic IP с виртуальной машиной
 resource "aws_eip_association" "vm_eip_assoc" {
-  instance_id   = aws_instance.first-vm[0].id # Привязываем к первому инстансу
-  allocation_id = aws_eip.vm_eip.id
+  for_each    = aws_instance.first-vm
+  instance_id = each.value.id
+  allocation_id = aws_eip.eip[each.key].id  # так же должен быть EIP с таким же for_each
 }
+
 
 # Вывод публичного ip адреса
 output "public_ip" {
   value = aws_eip.vm_eip.public_ip
 }
 
+output "public_ips" {
+  value = {
+    for key, instance in aws_instance.first-vm : key => aws_eip.eip[key].public_ip
+  }
+}
+
 # Подключение диска. Первый диск загрузочный, поэтому для данных лучше использовать secondary disk, чтобы в любой момент было возможно отключить от ВМ и подключить к другой
 resource "aws_ebs_volume" "secondary-disk-first-vm" {
   #availability_zone = aws_instance.first-vm.availability_zone
-  availability_zone = aws_instance.first-vm[count.index].availability_zone  #тоже добавляем [count.index] имя по индексу
+  #availability_zone = aws_instance.first-vm[count.index].availability_zone  #тоже добавляем [count.index] имя по индексу
+  for_each = var.instances  # Используем тот же for_each, что и для aws_instance.first-vm
+  availability_zone = aws_instance.first-vm[each.key].availability_zone  # Обращаемся по ключу
   size              = 20
-  count             = length(aws_instance.first-vm) #добавляем счетчик для имени по индексу
-  #tags = {
-  #  Name = "disk-name"
+  tags = {
+    Name = "disk-${each.key}"  # Добавляем имя диска по ключу
+  }
   }
 
 
+#resource "aws_volume_attachment" "ebs_att" {
+#  count       = length(aws_instance.first-vm)  #добавляем счетчик для имени по индексу
+#  device_name = "/dev/sdh"
+#  volume_id   = aws_ebs_volume.secondary-disk-first-vm[count.index].id #тоже добавляем [count.index] имя по индексу
+#  instance_id = aws_instance.first-vm[count.index].id  #тоже добавляем [count.index] имя по индексу
+#}
+
+# вариант с for_each
 resource "aws_volume_attachment" "ebs_att" {
-  count       = length(aws_instance.first-vm)  #добавляем счетчик для имени по индексу
+  for_each = var.instances  # Используем тот же for_each, что и для aws_instance.first-vm
+
   device_name = "/dev/sdh"
-  volume_id   = aws_ebs_volume.secondary-disk-first-vm[count.index].id #тоже добавляем [count.index] имя по индексу
-  instance_id = aws_instance.first-vm[count.index].id  #тоже добавляем [count.index] имя по индексу
+  volume_id   = aws_ebs_volume.secondary-disk-first-vm[each.key].id  # Обращаемся по ключу
+  instance_id = aws_instance.first-vm[each.key].id  # Обращаемся по ключу
 }
