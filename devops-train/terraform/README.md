@@ -38,6 +38,10 @@ https://developer.hashicorp.com/terraform/install#linux
 `terraform import aws_s3_bucket.bucket-2 devopstrain-learning-bucket-2` -импорт в terraform на примере aws
 `terraform output public_ip` -вывод пуличного ip адреса
 `terraform apply -destroy -target=aws_instance.first-vm` -удалить созданную ВМ
+`terraform destroy -target=aws_instance.first-vm` -или так
+`terraform destroy -target="aws_instance.first-vm[\"instance-1\"]" -target="aws_instance.first-vm[\"instance-2\"]"` - если нужно удалить конкретные инстанцы () здесь в примере они называются "instance-1" и "instance-2".
+
+
 `terraform plan -var-file=terraform.tfvars` - запуск с указанием файла с значениями переменных (разные файлы для разных сборок можно использовать)
 `terraform state list` -проверка чем управляет terraform
 
