@@ -41,3 +41,7 @@ resource "aws_s3_object" "object" { // Обратите внимание как 
   source = local_file.example.filename 
 }
 
+resource "aws_s3_bucket" "bucket-2" {
+  bucket = "${var.second_bucket}-${terraform.workspace}"
+
+}

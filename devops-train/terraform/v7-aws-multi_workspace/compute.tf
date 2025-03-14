@@ -65,7 +65,7 @@ output "public_ips" {
 # Подключение диска. Первый диск загрузочный, поэтому для данных лучше использовать secondary disk, чтобы в любой момент было возможно отключить от ВМ и подключить к другой
 resource "aws_ebs_volume" "secondary-disk-first-vm" {
   #availability_zone = aws_instance.first-vm.availability_zone
-  #availability_zone = aws_instance.first-vm[count.index].availability_zone  #тоже добавляем [count.index] имя по индексу
+  #availability_zone = aws_instance.first-vm[each.value].availability_zone  #тоже добавляем [each.value] имя по индексу
   for_each = var.instances  # Используем тот же for_each, что и для aws_instance.first-vm
   availability_zone = aws_instance.first-vm[each.key].availability_zone  # Обращаемся по ключу
   size              = 20
@@ -78,8 +78,8 @@ resource "aws_ebs_volume" "secondary-disk-first-vm" {
 #resource "aws_volume_attachment" "ebs_att" {
 #  count       = length(aws_instance.first-vm)  #добавляем счетчик для имени по индексу
 #  device_name = "/dev/sdh"
-#  volume_id   = aws_ebs_volume.secondary-disk-first-vm[count.index].id #тоже добавляем [count.index] имя по индексу
-#  instance_id = aws_instance.first-vm[count.index].id  #тоже добавляем [count.index] имя по индексу
+#  volume_id   = aws_ebs_volume.secondary-disk-first-vm[each.value].id #тоже добавляем [each.value] имя по индексу
+#  instance_id = aws_instance.first-vm[each.value].id  #тоже добавляем [each.value] имя по индексу
 #}
 
 # вариант с for_each
@@ -98,11 +98,11 @@ resource "random_id" "bucket_suffix" {
 
 
 #lifecycle rules для одного из наших бакетов, таким образом, чтобы происходило автоматическое удаление объектов спустя 30 дней, а для логов через 90 дней
-resource "aws_s3_bucket" "bucket-2" {
+#resource "aws_s3_bucket" "bucket-2" {
   #bucket = "devopstrain-bucket-kadann-3" // Имя должно быть таким как вы указывали ранее
-  bucket = "my-unique-bucket-name-2-${var.unique_suffix}"  # Добавьте уникальный суффикс#или можно сделать уникальным используя идентификатор
-  tags = local.common_tags
-}
+ # bucket = "my-unique-bucket-name-2-${var.unique_suffix}"  # Добавьте уникальный суффикс#или можно сделать уникальным используя идентификатор
+ # tags = local.common_tags
+#}
 
 
 # Управление версионированием new
