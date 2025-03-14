@@ -43,7 +43,9 @@ https://developer.hashicorp.com/terraform/install#linux
 `terraform plan -var-file=terraform.tfvars` - запуск с указанием файла с значениями переменных (разные файлы для разных сборок можно использовать)
 `terraform state list` -проверка чем управляет terraform
 `terraform destroy -target="aws_instance.first-vm[\"instance1\"]" -target="aws_instance.first-vm[\"instance2\"]"` - если нужно удалить конкретные инстанцы () здесь в примере они называются "instance-1" и "instance-2".
-
+`terraform workspace list` -список workspace
+`terraform workspace new dev` -создание нового workspace и переключение на него
+`terraform workspace select default` -переключение на нужный workspace
 
 ## Управляющие комнады AWS
 
