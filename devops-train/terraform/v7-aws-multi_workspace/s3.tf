@@ -7,8 +7,8 @@ resource "aws_s3_bucket" "bucket" {
   }
 }
 #ещё один 
-resource "aws_s3_bucket" "second_bucket" {
-  bucket = var.second_bucket  # Используем переменную second_bucket
+resource "aws_s3_bucket" "bucket-2" {
+  bucket = "${var.second_bucket}-${terraform.workspace}"
 
   tags = {
     Name        = "Second Bucket"

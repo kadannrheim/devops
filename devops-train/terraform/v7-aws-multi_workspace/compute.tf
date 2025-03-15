@@ -12,13 +12,14 @@ data "aws_ami" "ubuntu-2204" {
 }
 
 resource "aws_instance" "first-vm" {
-  for_each      = var.instances  # Используем map с ключами instance1, instance2
+  #for_each      = var.instances  # Используем map с ключами instance1, instance2
   ami           = data.aws_ami.ubuntu-2204.id
   instance_type = each.value     # Берём значение из map (например, "t2.micro")
   subnet_id     = aws_subnet.subnet_a.id
   key_name      = aws_key_pair.keypair.key_name
+  count = length(var.instances) #добавляем счётчик для создания нескольких машин по индексу
   tags = {
-    Name = each.key  # Назначаем имя по ключу (instance1, instance2)
+    Name = "${terraform.workspace}-${var.instances[count.index]}"
   }
   user_data = <<-EOF
               #!/bin/bash
