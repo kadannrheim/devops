@@ -6,13 +6,13 @@ resource "aws_s3_bucket" "bucket" {
   }
 }
 
-resource "aws_s3_bucket" "second_bucket" {
-  bucket = "${var.second_bucket}-${terraform.workspace}"  # Добавляем workspace в имя бакета
-  tags = {
-    Name        = "Second Bucket"
-    Environment = "Dev"
-  }
-}
+#resource "aws_s3_bucket" "second_bucket" {
+#  bucket = "${var.second_bucket}-${terraform.workspace}"  # Добавляем workspace в имя бакета
+#  tags = {
+#    Name        = "Second Bucket"
+#    Environment = "Dev"
+#  }
+#}
 
 # Используем рекомендованный bucket policy вместо ACL
 resource "aws_s3_bucket_policy" "bucket_policy" {
