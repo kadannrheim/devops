@@ -13,7 +13,7 @@ data "aws_ami" "ubuntu-2204" {
 
 resource "aws_instance" "first-vm" {
   ami           = data.aws_ami.ubuntu-2204.id
-  subnet_id     = aws_subnet.subnet_a.id
+  subnet_id     = data.terraform_remote_state.networking.outputs.subnet-id
   key_name      = aws_key_pair.keypair.key_name
   
   count = length(var.instances) # Используем count для создания нескольких машин

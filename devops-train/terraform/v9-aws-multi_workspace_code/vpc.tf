@@ -8,14 +8,19 @@ resource "aws_vpc" "main" {
   }
 }
 
-resource "aws_subnet" "subnet_a" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.5.0.0/24"
+resource "aws_subnet" "subnet-a" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.5.0.0/24"
   availability_zone = "eu-west-2a"
-  
+
   tags = {
     Name = "subnet_1"
   }
+}
+
+output "subnet-id" {
+  description = "Return subnet ID"
+  value       = aws_subnet.subnet-a.id
 }
 
 # Internet Gateway
@@ -43,6 +48,6 @@ resource "aws_route_table" "public_route_table" {
 
 # Привязка таблицы маршрутизации к подсети
 resource "aws_route_table_association" "public_subnet_assoc" {
-  subnet_id      = aws_subnet.subnet_a.id
+  subnet_id      = aws_subnet.subnet-a.id
   route_table_id = aws_route_table.public_route_table.id
 }

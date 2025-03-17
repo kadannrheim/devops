@@ -38,3 +38,12 @@ resource "aws_s3_object" "object" {
   key    = "output.txt"
   source = local_file.example.filename
 }
+
+data "terraform_remote_state" "networking" {
+  backend = "s3"
+  config = {
+    bucket = aws_s3_bucket.bucket.id
+    key    = "terraform/aws-vpc/state" # используем данные из VPC-проекта
+    region = "eu-west-2"
+  }
+}
