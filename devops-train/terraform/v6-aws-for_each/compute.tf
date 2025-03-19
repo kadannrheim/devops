@@ -116,18 +116,22 @@ resource "aws_s3_bucket" "bucket-2" {
 
 # Управление жизненным циклом new
 resource "aws_s3_bucket_lifecycle_configuration" "bucket-2-lifecycle" {
-  bucket = aws_s3_bucket.bucket-2.id  # Ссылка на созданный бакет
+  bucket = aws_s3_bucket.bucket-2.id
+  dynamic "rule" {
+    for_each = var.bucket_lifecycle_rules
 
-  rule {
-    id     = "log"
-    status = "Enabled"
+    content {
+      id      = rule.value["id"]
+      status = "Enabled"  # <-- вместо enabled
+      #enabled = true
 
-     filter {
-      prefix = "logs/"  # Применяем правило только к объектам с префиксом "logs/"
-     }
-    transition {
-      days          = 30
-      storage_class = "GLACIER"
+      filter {
+        prefix = rule.value["prefix"]
+      }
+
+      expiration {
+        days = rule.value["expiration_days"]
+      }
     }
   }
 }

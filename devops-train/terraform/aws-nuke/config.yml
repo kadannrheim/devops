@@ -1,0 +1,13 @@
+regions:
+  - eu-west-2
+account-blocklist:
+  - "5716-0083-8708"  # Замените на ваш AWS Account ID
+account-aliases:
+  - "prod"  # Укажите алиас вашего аккаунта
+resource-types:
+  targets:
+    - EC2Address  # Elastic IP
+    - EC2Instance
+    - S3Bucket
+    - RDSInstance
+    - VPC
