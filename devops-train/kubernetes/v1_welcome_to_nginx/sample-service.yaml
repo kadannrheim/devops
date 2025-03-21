@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-site
+  labels:
+    app: sample-site
+  namespace: default
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 32021
+  selector:
+    app: sample-site
+  type: NodePort # позволяет открывать наружу порты в некотором интервале, но чаще используют ClusterIP и ExternalName
