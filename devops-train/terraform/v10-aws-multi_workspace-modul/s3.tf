@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "bucket" {
+resource "aws_s3_bucket" "bucket" { #создание бакета
   bucket = var.state_bucket  # Используем переменную state_bucket
   tags = {
     Name        = "My bucket"
@@ -6,13 +6,13 @@ resource "aws_s3_bucket" "bucket" {
   }
 }
 
-#resource "aws_s3_bucket" "second_bucket" {
-#  bucket = "${var.second_bucket}-${terraform.workspace}"  # Добавляем workspace в имя бакета
-#  tags = {
-#    Name        = "Second Bucket"
-#    Environment = "Dev"
-#  }
-#}
+resource "aws_s3_bucket" "second_bucket" {
+  bucket = "${var.second_bucket}-${terraform.workspace}"  # Добавляем workspace в имя бакета
+  tags = {
+    Name        = "Second Bucket"
+    Environment = "Dev"
+  }
+}
 
 # Используем рекомендованный bucket policy вместо ACL
 resource "aws_s3_bucket_policy" "bucket_policy" {
@@ -37,13 +37,4 @@ resource "aws_s3_object" "object" {
   bucket = aws_s3_bucket.bucket.id
   key    = "output.txt"
   source = local_file.example.filename
-}
-
-data "terraform_remote_state" "networking" {
-  backend = "s3"
-  config = {
-    bucket = aws_s3_bucket.bucket.id
-    key    = "terraform/aws-vpc/state" # используем данные из VPC-проекта
-    region = "eu-west-2"
-  }
 }

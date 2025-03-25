@@ -1,6 +1,28 @@
+terraform {
+  backend "s3" {
+    bucket = "devopstrain-bucket-kadannr"
+    key    = "terraform/aws-vpc/state" # обратите внимание, тут изменился ключ
+    region = "eu-west-2"
+  }
+}
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
+# Configure the AWS Provider
+provider "aws" {
+  region = "eu-west-2"
+}
+
 resource "aws_vpc" "main" {
-  cidr_block = "10.5.0.0/16"
-  enable_dns_support = true 
+  cidr_block           = "10.5.0.0/16"
+  enable_dns_support   = true
   enable_dns_hostnames = true
 
   tags = {
@@ -44,10 +66,4 @@ resource "aws_route_table" "public_route_table" {
   tags = {
     Name = "public-route-table"
   }
-}
-
-# Привязка таблицы маршрутизации к подсети
-resource "aws_route_table_association" "public_subnet_assoc" {
-  subnet_id      = aws_subnet.subnet-a.id
-  route_table_id = aws_route_table.public_route_table.id
 }

@@ -13,7 +13,7 @@ data "aws_ami" "ubuntu-2204" {
 
 resource "aws_instance" "first-vm" {
   ami           = data.aws_ami.ubuntu-2204.id
-  subnet_id     = aws_subnet.subnet_a.id
+  subnet_id     = data.terraform_remote_state.networking.outputs.subnet-id
   key_name      = aws_key_pair.keypair.key_name
   
   count = length(var.instances) # Используем count для создания нескольких машин
@@ -65,4 +65,14 @@ resource "aws_volume_attachment" "ebs_att" {
   device_name = "/dev/sdh"
   volume_id   = aws_ebs_volume.secondary-disk-first-vm[count.index].id
   instance_id = aws_instance.first-vm[count.index].id
+}
+
+
+data "terraform_remote_state" "networking" {
+  backend = "s3"
+  config = {
+    bucket = "devopstrain-bucket-kadannr"
+    key    = "terraform/aws-vpc/state" # используем данные из VPC-проекта
+    region = "eu-west-2"
+  }
 }

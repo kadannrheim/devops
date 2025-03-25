@@ -30,7 +30,7 @@ resource "aws_instance" "first-vm" {
 }
 
 resource "aws_key_pair" "keypair" {
-  key_name   = "key_for_ssh_15"
+  key_name   = "key_for_ssh"
   public_key = file("~/.ssh/id_rsa.pub")
 }
 
@@ -65,4 +65,14 @@ resource "aws_volume_attachment" "ebs_att" {
   device_name = "/dev/sdh"
   volume_id   = aws_ebs_volume.secondary-disk-first-vm[count.index].id
   instance_id = aws_instance.first-vm[count.index].id
+}
+
+
+data "terraform_remote_state" "networking" {
+  backend = "s3"
+  config = {
+    bucket = "devopstrain-bucket-kadannr"
+    key    = "terraform/aws-vpc/state" # используем данные из VPC-проекта
+    region = "eu-west-2"
+  }
 }

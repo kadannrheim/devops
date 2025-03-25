@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "bucket" {
+resource "aws_s3_bucket" "bucket" { #создание бакета
   bucket = var.state_bucket  # Используем переменную state_bucket
   tags = {
     Name        = "My bucket"

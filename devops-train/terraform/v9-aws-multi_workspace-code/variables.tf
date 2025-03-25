@@ -8,10 +8,10 @@ variable "state_bucket" {
   type        = string
 }
 
-#variable "second_bucket" {
-#  description = "Bucket to test import"
-#  type        = string
-#}
+variable "second_bucket" {
+  description = "Bucket to test import"
+  type        = string
+}
 
 variable "subnet_params" {
   description = "VPC subnet params"

@@ -1,5 +1,6 @@
 # Блок заданий по kubernetes
-
+Ingress в Kubernetes - это ресурс, который позволяет управлять входящим трафиком в кластер
+LoadBalancer включает в себя внешний IP-адрес, который клиенты могут использовать для доступа к сервису
 
 
 # Команды управления kubernetes через kubectl
@@ -14,6 +15,8 @@
 `kubectl get svc` -вывести созданные сервисы (нужны для сетевого доступа к подам)
 `kubectl get deployments -l app=sample-site` -вывести все развёртывания с метками (labels) sample-site
 `kubectl exec deploy/toolkit -ti -- /bin/bash` -зайти в под
+`kubectl port-forward service/sample-site-clusterip 8081:80` -проброс порта по имени svc, далее доступен по http://127.0.0.1:8081 или поду `kubectl port-forward sample-site-768999cc84-4tdtg  8081:80`
+`kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.6.4/deploy/static/provider/cloud/deploy.yaml` -установка ingress контроллера, он нужен для управления входящим трафиком в кластер
 
 # Статусы подов
 
