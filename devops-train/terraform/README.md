@@ -110,3 +110,15 @@ TCP
 0.0.0.0/0
 ```
 Важно именно в таком порядке добавить, иначе будет ругаться не явной ошибкой. Или поудалять авто-созданный.
+
+# Загрузка из общедоступного репозитория невозможна, так как текущий пользователь отличается от владельца скачиваемого файла
+```
+/usr/bin/git exited with 128: fatal: detected dubious ownership in repository at
+│ '/media/sf_git/devops/devops-train/terraform/v10-aws-multi_workspace-modul/.terraform/modules/vpc'
+│ To add an exception for this directory, call:
+│       git config --global --add safe.directory
+```
+Решение добавить директорию в безопасные для Git, пример директории:
+```
+git config --global --add safe.directory /media/sf_git/devops/devops-train/terraform/v10-aws-multi_workspace-modul/.terraform/modules/vpc
+```
