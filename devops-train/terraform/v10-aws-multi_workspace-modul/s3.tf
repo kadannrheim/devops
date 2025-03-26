@@ -1,5 +1,6 @@
 resource "aws_s3_bucket" "bucket" { #создание бакета
   bucket = var.state_bucket  # Используем переменную state_bucket
+  depends_on = [module.vpc]  # Явно указываем зависимость
   tags = {
     Name        = "My bucket"
     Environment = "Dev"
