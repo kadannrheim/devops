@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: redis
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: redis
+    template:
+        metadata:
+            labels:
+                app: redis
+        spec:
+            containers:
+            - image: redis
+              name: redis
+              command:
+                - redis-server
+                - /usr/local/etc/redis/redis.conf
+              resources:
+                limits:
+                    cpu: 500m
+                    memory: 500Mi
+                requests:
+                    cpu: 10m
+                    memory: 500Mi
+              volumeMounts:
+                - mountPath: /data
+                  name: redis-storage
+                - name: config-volume
+                  mountPath: /usr/local/etc/redis
+            volumes:
+            - name: redis-storage
+              persistentVolumeClaim:
+                claimName: sample-claim
+            - name: config-volume
+              configMap:
+                name: sample-config

@@ -47,6 +47,13 @@ LoadBalancer включает в себя внешний IP-адрес, кото
 `kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.6.4/deploy/static/provider/cloud/deploy.yaml` -установка ingress контроллера, он нужен для управления входящим трафиком в кластер
 `kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/cert-manager.yaml` -установка cert manager для управления сертификатами
 `kubectl get pod -n cert-manager` вывод cert-manager
+`kubectl describe configmap sample-config` -вывод инфо конфиг мапа
+`kubectl describe secret sample-secret` -вывод инфо секрета
+`kubectl describe pvc sample-claim` -вывод инфо volume
+`kubectl exec deploy/redis -ti -- /bin/ls /usr/local/etc/redis` -скписок файлов конфигмап
+`kubectl logs env-pod` -вывод логов
+`kubectl delete statefulset example-statefulset` -удаление statefulset
+`kubectl get events --sort-by=.metadata.creationTimestamp` ивенты куба
 
 # Статусы подов
 

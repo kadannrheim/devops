@@ -1,8 +1,0 @@
-# Теперь, если мы обратимся по имени external-service-yandex, то фактически запрос уйдет на сервер ya.ru
-kind: Service
-apiVersion: v1
-metadata:
-  name: external-service-yandex
-spec:
-  type: ExternalName
-  externalName: ya.ru

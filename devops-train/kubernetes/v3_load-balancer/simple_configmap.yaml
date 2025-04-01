@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: sample-config
+data:
+    # Объявление настроек в формате key-value
+    DB_HOST: db.example.com
+    DB_PORT: "5432"
+    LOG_LEVEL: DEBUG
+    # Объявление настроек в формате JSON
+    JSON_CONFIG: '{"key1": "value1", "key2": "value2"}'
+    # А это нам пригодится для монтирования конфига в будущем. 
+    # Но лучше не перемешивать типы конфигов, тут они просто для наглядности представлены все
+    redis.conf: |
+        save 900 1
+        save 900 10
+        save 120 10000

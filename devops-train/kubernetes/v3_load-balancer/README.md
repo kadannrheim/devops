@@ -15,3 +15,14 @@
 
 12. Cert-manager. Автоматическое получение SSL сертификата
 13. Хранение данных: ConfigMap, Secrets
+14. Volumes: персистентность данных(PV, PVC)
+15. Volumes: подключаем ConfigMap/PVC
+    1. Доп. задание - выполнено. Посмотреть конфиг redis.conf:
+    `kubectl exec deploy/redis -ti -- cat /usr/local/etc/redis/redis.conf`
+    2. Доп. задание - #task . Изучите Projected volumes. Они позволяют подключать несколько источников данных в одну директорию. Создайте такой deployment. 
+16. Настройка приложения через ENV/Secrets
+17. StatefulSets
+    1. Полезно знать - #task . Попробуйте развернуть базу Cockroachdb(Совместим на уровне протокола и SQL с postgresql) используя их оператор для этого.
+    2. Доп.задание - выполнено. Задание для самостоятельной практики
+    Запустите сервер PostgresSQL в режиме statefulset (одну реплику).
+    Сложил в отдельной папке postgres-statefulset.
