@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: sample-cronjob
+spec:
+  schedule: "*/5 * * * *"
+  successfulJobsHistoryLimit: 2
+  failedJobsHistoryLimit: 2
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: example-container
+              image: nginx
+              command: ["/bin/sh"]
+              args: ["-c", "echo Hello from the Kubernetes cluster!"]
+          restartPolicy: OnFailure

@@ -39,6 +39,7 @@ LoadBalancer включает в себя внешний IP-адрес, кото
 `kubectl describe <тип-ресурса> <имя-ресурса>` -для получения подробной информации о статусе ресурса
 `kubectl describe nodes` -пример использования describe или `kubectl describe deployment sample-site`
 `kubectl get nodes -o wide` -какие ноды запущены 
+`kubectl label nodes NODENAME label=value` -указадние своих labels на нодах
 `kubectl get svc` -вывести созданные сервисы (нужны для сетевого доступа к подам)
 `kubectl get svc -n ingress-nginx` -вывести конкретный (просмотр ингресса, поиск external-ip)
 `kubectl get deployments -l app=sample-site` -вывести все развёртывания с метками (labels) sample-site
@@ -54,6 +55,8 @@ LoadBalancer включает в себя внешний IP-адрес, кото
 `kubectl logs env-pod` -вывод логов
 `kubectl delete statefulset example-statefulset` -удаление statefulset
 `kubectl get events --sort-by=.metadata.creationTimestamp` ивенты куба
+`kubectl get daemonsets.apps sample-ds` -вывод daemonset
+`kubectl patch cronjobs.batch sample-cronjob -p '{"spec" : {"suspend" : true }}'` -временно приостановить создание новых Job по расписанию, не удаляя самого CronJob, например, для отладки. Это можно сделать через указание Suspend И вернуть обратно, изменив true на false
 
 # Статусы подов
 
