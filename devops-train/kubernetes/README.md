@@ -58,7 +58,7 @@ LoadBalancer включает в себя внешний IP-адрес, кото
 `kubectl get daemonsets.apps sample-ds` -вывод daemonset
 `kubectl patch cronjobs.batch sample-cronjob -p '{"spec" : {"suspend" : true }}'` -временно приостановить создание новых Job по расписанию, не удаляя самого CronJob, например, для отладки. Это можно сделать через указание Suspend И вернуть обратно, изменив true на false
 `kubectl describe quota -n=default` -квота на ресурсы в пространстве имён default или в любом указанном другом
-
+`kubectl get events` ивенты для анализа ошибок
 Создание нагрузки:
 `hey -n 10000 http://{IP_OF_NODE}:32080/` -создаём нагрузку, ip вставляем нашей ноды
 `kubectl get pods -w -l app=app-cpu` -смотрим за количеством подов
