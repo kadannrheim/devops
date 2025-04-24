@@ -13,7 +13,7 @@ data "aws_ami" "ubuntu-2204" {
 
 resource "aws_instance" "first-vm" {
   ami           = data.aws_ami.ubuntu-2204.id
-  subnet_id = module.vpc.private_subnets[0]
+  subnet_id = "${module.vpc.private_subnets[0]}"
   key_name      = aws_key_pair.keypair.key_name
   
   count = length(var.instances) # Используем count для создания нескольких машин

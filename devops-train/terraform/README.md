@@ -46,6 +46,8 @@ https://developer.hashicorp.com/terraform/install#linux
 `terraform workspace list` -список workspace
 `terraform workspace new dev` -создание нового workspace и переключение на него
 `terraform workspace select default` -переключение на нужный workspace
+`terraform fmt` - это утилита, точнее подкоманда, предоставляемая Terraform, которая используется для автоматического форматирования файлов конфигурации Terraform
+`terraform-docs markdown table ./path/to/module > documentation.md` -создание документации (пример)
 
 ## Управляющие комнады AWS
 
