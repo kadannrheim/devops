@@ -1,8 +1,13 @@
 # Развёртывание vpn wireguard на docker через docker-compose
 ## Переменную PASSWORD уже не используют. Теперь PASSWORD_HASH. Генерируем хэш с помощью команды
+1.
+Но сперва ставим докер: https://docs.docker.com/engine/install/ubuntu/
+2.
+Всё остальное
 `docker run --rm -it ghcr.io/wg-easy/wg-easy wgpw 'my_password'`
 Символы $ экранируем ещё одним $. Из негерации кавычки убираем. Мануал здесь https://github.com/wg-easy/wg-easy/blob/master/How_to_generate_an_bcrypt_hash.md
-
+3. 
+Запускаем сборку `docker compose up -d`
 ## Структура
 wireguard-ui/
 ├── .env
@@ -14,6 +19,10 @@ wireguard-ui/
 #        ├── privatekey
 #        └── другие_файлы_конфигурации
 
+Всё идём в UI!
+----
+4. 
+Эта нужно если настраивать на хосте или зайти в контейнер, вообщем прозапас здесь:
 ## Команды управления
 `sudo wg-quick up wg0`
 `sudo wg-quick down wg0`
