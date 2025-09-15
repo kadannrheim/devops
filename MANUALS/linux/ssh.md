@@ -24,6 +24,8 @@ scp user@192.168.1.100:/var/log/app.log ~/backups/
 ```
 `ssh-copy-id user@host` -по ssh-copy-id (удобней всего)
 
+# Jump! через машину внешним адресом на локальнуж в той же сети
+`ssh -J kadannr@server-train:22 kadannr@192.168.1.53`
 ----
 # Файлы конфигурации и пути
 Конфигурацию SSH-сервера (/etc/ssh/sshd_config)
@@ -82,9 +84,10 @@ sudo systemctl restart sshd
 # Удобства
 Подключение по имени
 ```~/.ssh/config
-Host myserver
-  HostName 192.168.1.100
-  User user
-  IdentityFile ~/.ssh/id_ed25519
+Host web-server
+  HostName 192.168.1.53
+  User kadannr
+  IdentityFile ~/.ssh/id_rsa # или id_ed25519
   Port 22
 ```
+
