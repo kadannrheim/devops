@@ -21,3 +21,8 @@ releases:
   set:
     - name: installCRDs
       value: true
+
+- name: mychart
+  namespace: default
+  chart: ./mychart
+  version: "0.1.0"

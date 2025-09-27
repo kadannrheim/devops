@@ -1,0 +1,8 @@
+# Проверим ваш образ
+if docker pull kadannrheim/golang-redis-app:0.0.1 >/dev/null 2>&1; then
+    echo "✅ Образ kadannrheim/golang-redis-app:0.0.1 существует в Docker Hub"
+else
+    echo "❌ Образ kadannrheim/golang-redis-app:0.0.1 НЕ существует в Docker Hub"
+    echo ""
+    echo "Проверьте в браузере: https://hub.docker.com/r/kadannrheim/golang-redis-app"
+fi

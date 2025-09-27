@@ -1,12 +1,7 @@
 controller:
   service:
     externalTrafficPolicy: "Local"
-    annotations:
-      service.beta.kubernetes.io/ovh-loadbalancer-proxy-protocol: "v2"
-      testlabel: "testvalue"
   config:
     use-proxy-protocol: "true"
     real-ip-header: "proxy_protocol"
-    proxy-real-ip-cidr: "10.199.100.5/32,10.199.100.6/32,10.199.100.7/32,10.199.103.92/32"
-
-    
+    proxy-real-ip-cidr: "51.89.228.140/32"

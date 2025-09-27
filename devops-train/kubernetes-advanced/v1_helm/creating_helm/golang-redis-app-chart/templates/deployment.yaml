@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golang-redis-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: golang-redis-app
+  template:
+    metadata:
+      labels:
+        app: golang-redis-app
+    spec:
+      containers:
+      - name: golang-redis-app-container
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        ports:
+        - containerPort: 8080
