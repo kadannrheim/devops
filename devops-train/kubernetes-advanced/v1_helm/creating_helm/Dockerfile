@@ -1,4 +1,4 @@
-FROM golang:1.21 AS builder
+FROM golang:1.23.2 AS builder
 
 # Устанавливаем рабочий каталог внутри контейнера
 WORKDIR /src/
@@ -8,6 +8,11 @@ COPY ./main.go /src/
 
 # Инициализируем модуль Go
 RUN go mod init mymodule
+
+# Копируем go.mod и go.sum если есть, или создаем go.mod
+#COPY go.mod go.sum ./
+# Если файлов нет, создаем go.mod
+#RUN test -f go.mod || go mod init mymodule
 
 # Скачиваем все зависимости
 RUN go mod download

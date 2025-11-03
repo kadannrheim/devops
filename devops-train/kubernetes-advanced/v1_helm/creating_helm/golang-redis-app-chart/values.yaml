@@ -1,7 +1,7 @@
 image:
-  repository: kadannrheim/golang-redis-app  # замените на ваш логин
+  repository: kadannr/golang-redis-app  # имя образа docker
   pullPolicy: IfNotPresent
-  tag: "0.0.1"
+  tag: "0.0.6"
 
 resources:
   limits:
@@ -44,3 +44,8 @@ redis:
       size: 1Gi
   auth:
     enabled: false
+  image:
+    registry: docker.io
+    repository: redis
+    tag: 7-bookworm      # ⬅️ ИЗМЕНИТЬ С 7-alpine
+    pullPolicy: IfNotPresent

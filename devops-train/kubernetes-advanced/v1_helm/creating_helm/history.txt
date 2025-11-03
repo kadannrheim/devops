@@ -1,0 +1,1030 @@
+   27  2025-04-01 08:47:09 kubectl logs postgres-0
+   28  2025-04-01 08:51:21 kubectl get pvc
+   29  2025-04-01 08:51:44 kubectl get pv 
+   30  2025-04-01 09:01:09 sudo poweroff -n
+   31  2025-04-02 05:58:51 cd /media/sf_git/devops/devops-train/
+   32  2025-04-02 05:58:56 cd kubernetes/v3_load-balancer/
+   33  2025-04-02 05:58:57 ls
+   34  2025-04-02 05:59:27 kubectl apply -f daemonset.yaml 
+   35  2025-04-02 05:59:52 kurator course start
+   36  2025-04-02 06:00:42 kubectl get daemonsets.apps sample-ds
+   37  2025-04-02 06:05:05 kubectl apply -f cronjob.yaml 
+   38  2025-04-02 06:05:21 kurator course start
+   39  2025-04-02 06:05:45 kubectl get cronjob
+   40  2025-04-02 06:13:52 kubect exec -ti sample-cronjob-29059390-nql2d /bin/bash
+   41  2025-04-02 06:13:59 kubectl exec -ti sample-cronjob-29059390-nql2d /bin/bash
+   42  2025-04-02 06:14:07 kubectl exec -t sample-cronjob-29059390-nql2d /bin/bash
+   43  2025-04-02 06:14:43 kubectl exec sample-cronjob-29059390-nql2d -ti /bin/bash
+   44  2025-04-02 06:15:33 kubectl exec -ti sample-cronjob-29059390-nql2d -- /bin/bash
+   45  2025-04-02 06:16:23 kubectl exec -ii sample-cronjob-29059390-nql2d -- /bin/bash
+   46  2025-04-02 06:16:34 kubectl exec -it sample-cronjob-29059390-nql2d -- /bin/bash
+   47  2025-04-02 06:16:44 kubectl exec -it sample-cronjob-29059390-nql2d -- /bin/sh
+   48  2025-04-02 06:19:25 kubectl describe nodes
+   49  2025-04-02 06:29:17 sudo poweroff -n
+   50  2025-04-02 05:51:30 watch -n5 kubectl get po
+   51  2025-04-08 07:26:30 cd /media/sf_git/devops/devops-train/
+   52  2025-04-08 07:26:33 cd kubernetes/v3_load-balancer/
+   53  2025-04-08 07:26:36 ls
+   54  2025-04-08 08:21:36 cd ../v4_podAntiAffinity/
+   55  2025-04-08 08:21:37 ls
+   56  2025-04-08 08:21:49 kubectl create -f nginx20.yaml 
+   57  2025-04-08 21:48:25 sudo poweroff -n
+   58  2025-04-08 07:25:57 kubectl get po
+   59  2025-04-08 07:26:22 watch -n5 kubectl get po
+   60  2025-04-09 07:38:48 kubectl get pods -w -l app=app-cpu
+   61  2025-04-09 07:43:55 watch -n5 kubectl get po
+   62  2025-04-09 08:04:56 watch kubectl get hpa memory-hpa
+   63  2025-04-09 08:05:08 kubectl get hpa memory-hpa
+   64  2025-04-09 08:05:44 watch -n5 kubectl get po
+   65  2025-04-09 08:36:57 kubectl get pods -w -l app=app-cpu
+   66  2025-04-09 09:20:13 =ъ-0-0-=0хлщ0гзшшгшщзггшукепрьнггг8апепрпенптвргьгротпнщпор6нкгн
+   67  2025-04-09 07:24:23 cd kubernetes/v3_load-balancer/
+   68  2025-04-09 07:24:39 cd /media/sf_git/devops/devops-train/
+   69  2025-04-09 07:24:53 cd kubernetes/v4_podAntiAffinity/HorizontalPodAutoscaler/
+   70  2025-04-09 07:24:56 ls
+   71  2025-04-09 07:37:08 kubectl create -f deployment_for_hpa.yaml 
+   72  2025-04-09 07:37:35 kubectl create -f HorizontalPodAutoscaler.yaml 
+   73  2025-04-09 07:37:50 kurator course start
+   74  2025-04-09 07:39:12 hey -n 10000 http://{IP_OF_NODE}:32080/
+   75  2025-04-09 07:39:44 sudo apt install hey
+   76  2025-04-09 07:40:08 hey -n 10000 http://{IP_OF_NODE}:32080/
+   77  2025-04-09 07:41:12 kubectl get nodes -o wide
+   78  2025-04-09 07:41:31 hey -n 10000 http://51.38.222.37:32080/
+   79  2025-04-09 08:03:58 kubectl top pods --containers
+   80  2025-04-09 08:05:53 cd hpa_java/
+   81  2025-04-09 08:05:54 ls
+   82  2025-04-09 08:06:59 kubectl create -f ./
+   83  2025-04-09 08:07:53 kubectl describe po memory-intensive-app-6b6bc78d7c-fjxkj
+   84  2025-04-09 08:30:11 kubectl logs po memory-intensive-app-6b6bc78d7c-fjxkj
+   85  2025-04-09 08:30:16 kubectl log po memory-intensive-app-6b6bc78d7c-fjxkj
+   86  2025-04-09 08:30:21 kubectl logs po memory-intensive-app-6b6bc78d7c-fjxkj
+   87  2025-04-09 08:30:45 kubectl log po memory-intensive-app-6b6bc78d7c-fjxkj
+   88  2025-04-09 08:30:49 kubectl logs po memory-intensive-app-6b6bc78d7c-fjxkj
+   89  2025-04-09 08:31:07 kubectl logs memory-intensive-app-6b6bc78d7c-fjxkj
+   90  2025-04-09 08:36:15 kubectl apply -f java-app_deployment.yaml 
+   91  2025-04-09 08:37:21 hey -n 10000 http://51.38.222.37:32080/
+   92  2025-04-09 20:44:49 sudo poweroff -n
+   93  2025-04-16 07:31:44 kubectl describe quota -n=default
+   94  2025-04-16 07:35:24 kubectl get po
+   95  2025-04-16 07:40:07 cd /media/sf_git/devops/devops-train/
+   96  2025-04-16 07:40:11 cd kubernetes/v5_ResourceQuota/
+   97  2025-04-16 07:40:12 ls
+   98  2025-04-16 07:40:27 kubectl apply -f resourcequota.yaml 
+   99  2025-04-16 07:40:35 kubectl describe quota pods-high -n default
+  100  2025-04-16 07:42:29 kubectl apply -f deployment-nginx.yaml 
+  101  2025-04-16 07:42:34 kubectl describe quota pods-high -n defaul
+  102  2025-04-16 07:42:45 kubectl describe quota pods-high -n default
+  103  2025-04-16 07:43:29 kubectl apply -f deployment-nginx.yaml 
+  104  2025-04-16 07:46:27 kubectl describe deployment nginx-test-quota
+  105  2025-04-16 07:54:43 kubectl get deployment
+  106  2025-04-16 07:55:45 kubectl delete deployment nginx-test-quota
+  107  2025-04-16 07:55:52 kubectl delete 
+  108  2025-04-16 07:56:19 kubectl delete deployment memory-intensive-app
+  109  2025-04-16 07:56:50 kubectl delete deployment app-cpu
+  110  2025-04-16 07:57:40 kubectl delete deployment sample-web
+  111  2025-04-16 07:57:54 kubectl delete deployment simple-web
+  112  2025-04-16 07:58:11 kubectl delete deployment busybox
+  113  2025-04-16 07:58:43 kubectl apply -f resourcequota.yaml 
+  114  2025-04-16 07:59:39 kubectl get deployment
+  115  2025-04-16 07:59:50 kubectl apply -f resourcequota.yaml 
+  116  2025-04-16 08:00:08 kubectl get limitrange
+  117  2025-04-16 08:03:19 kubectl apply -f deployment-nginx.yaml 
+  118  2025-04-16 08:07:04 kubectl delete quota pods-high -n default
+  119  2025-04-16 08:07:25 kubectl describe quota pods-high -n default
+  120  2025-04-16 08:08:06 kubectl get deployment
+  121  2025-04-16 08:08:28 kubectl delete deployment nginx20-deployment
+  122  2025-04-16 08:08:38 kubectl describe quota pods-high -n default
+  123  2025-04-16 08:09:15 kubectl apply -f deployment-nginx.yaml 
+  124  2025-04-16 08:10:22 kubectl get cronjob
+  125  2025-04-16 08:10:39 kubectl delete cronjob sample-cronjob
+  126  2025-04-16 08:11:34 kubectl get deployment nginx-test-quota
+  127  2025-04-16 08:12:07 kubectl describe deployment nginx-test-quota
+  128  2025-04-16 08:13:30 kubectl describe quota pods-high -n defaul
+  129  2025-04-16 08:14:23 kubectl get deployment 
+  130  2025-04-16 08:14:44 kubectl delete deployment nginx-test-quota
+  131  2025-04-16 08:15:14 kubectl apply -f deployment-nginx.yaml 
+  132  2025-04-16 08:30:45 ды
+  133  2025-04-16 08:30:46 ls
+  134  2025-04-16 08:30:59 kubectl apply -f limitrange.yaml 
+  135  2025-04-16 08:33:18 ls
+  136  2025-04-16 08:33:27 kubectl apply -f deployment_nginx-limitragne.yaml 
+  137  2025-04-16 08:33:39 kubectl get deployment
+  138  2025-04-16 08:33:57 kubectl describe deployment nginx-test-limitrange
+  139  2025-04-16 08:34:40 kubectl logs deployment nginx-test-limitrange
+  140  2025-04-16 08:34:44 kubectl log deployment nginx-test-limitrange
+  141  2025-04-16 08:34:48 kubectl logs deployment nginx-test-limitrange
+  142  2025-04-16 08:36:05 kubectl get rs -l app=nginx-test-limitrange
+  143  2025-04-16 08:40:13 kubectl apply -f deployment_nginx-limitragne.yaml 
+  144  2025-04-16 08:40:19 kubectl get deployment
+  145  2025-04-16 08:40:55 kubectl apply -f deployment_nginx-limitragne.yaml 
+  146  2025-04-16 08:40:58 kubectl get deployment
+  147  2025-04-16 08:42:39 kubectl delete quota pods-high -n default
+  148  2025-04-16 08:43:30 kubectl apply -f resourcequota.yaml 
+  149  2025-04-16 08:44:30 kubectl delete quota pods-high -n default
+  150  2025-04-16 08:46:34 kubectl get deployment
+  151  2025-04-16 08:46:55 kubectl delete deployment nginx-test-quota
+  152  2025-04-16 08:47:21 kubectl delete deployment nginx-test-limitrange
+  153  2025-04-16 08:47:39 kubectl apply -f deployment_nginx-limitragne.yaml 
+  154  2025-04-16 08:47:42 kubectl get deployment
+  155  2025-04-16 08:48:42 kubectl get rs -l app=nginx-test-limitrange
+  156  2025-04-16 08:48:53 kubectl describe deployment nginx-test-limitrange | grep -A5 ReplicaSet
+  157  2025-04-16 08:49:29 kubectl describe nodes | grep -A5 Allocatable
+  158  2025-04-16 08:49:51 kubectl get nodes
+  159  2025-04-16 08:56:28 kubectl get events
+  160  2025-04-16 14:05:57 sudo poweroff -n
+  161  2025-04-16 07:42:59 watch -n5 kubectl get po
+  162  2025-04-18 15:40:04 ping 8.8.8.8
+  163  2025-04-18 15:40:12 watch -n5 kubectl get po
+  164  2025-04-18 15:23:09 cd /media/sf_git/devops/devops-train/
+  165  2025-04-18 15:23:14 cd kubernetes/v5_ResourceQuota/
+  166  2025-04-18 15:23:15 ls
+  167  2025-04-18 15:23:37 kubectl apply -f serviceaccount.yaml 
+  168  2025-04-18 15:25:20 kubectl get po
+  169  2025-04-18 15:50:33 sudo poweroff -n
+  170  2025-04-19 21:56:11 cd /media/sf_git/devops/devops-train/
+  171  2025-04-19 21:56:19 cd kubernetes/v5_ResourceQuota/
+  172  2025-04-19 21:57:11 kubectl get po
+  173  2025-04-19 21:57:37 kubectl -f apply serviceaccount.yaml 
+  174  2025-04-19 21:57:45 kubectl apply -f serviceaccount.yaml 
+  175  2025-04-19 21:57:54 kubectl apply -f deployment_serviceaaccount.yaml 
+  176  2025-04-19 21:57:59 kubectl get po
+  177  2025-04-19 21:58:44 kubectl get deployment
+  178  2025-04-19 21:59:26 kubectl get deployment kubectl-tester
+  179  2025-04-19 21:59:44 kubectl describe deployment
+  180  2025-04-19 21:59:51 kubectl describe deployment kubectl-tester
+  181  2025-04-19 22:00:01 kubectl get events
+  182  2025-04-19 22:01:19 kubectl get pod
+  183  2025-04-19 22:10:20 kubectl describe quota pods-high -n default
+  184  2025-04-19 22:11:58 kubectl get deployment
+  185  2025-04-19 22:12:18 kube delete deployment toolkit
+  186  2025-04-19 22:12:27 kubectl delete deployment toolkit
+  187  2025-04-19 22:12:50 kubectl apply -f deployment_serviceaaccount.yaml 
+  188  2025-04-19 22:13:26 kubectl get po
+  189  2025-04-19 22:19:06 sudo poweroff -n
+  190  2025-04-21 10:38:19 cd /media/sf_git/devops/devops-train/
+  191  2025-04-21 10:38:22 cd terraform/
+  192  2025-04-21 10:38:37 cd v10-aws-multi_workspace-modul/
+  193  2025-04-21 10:38:39 ls
+  194  2025-04-21 10:44:41 ls -l
+  195  2025-04-21 10:48:24 terraform apply
+  196  2025-04-21 10:53:41 kurator course start
+  197  2025-04-21 10:56:20 terraform destroy
+  198  2025-04-21 21:31:14 sudo poweroff -n
+  199  2025-04-24 16:05:56 cat config 
+  200  2025-04-24 16:06:40 mv config config_kurs-k8s
+  201  2025-04-24 16:06:42 ls
+  202  2025-04-24 16:06:50 vim config
+  203  2025-04-24 16:07:54 kubectl get po
+  204  2025-04-24 16:09:24 ls
+  205  2025-04-24 16:10:43 rm config
+  206  2025-04-24 16:10:45 ls
+  207  2025-04-24 16:10:49 vim 
+  208  2025-04-24 16:10:57 vim config
+  209  2025-04-24 16:11:17 kubectl get po
+  210  2025-04-24 16:11:27 kubectl get ns
+  211  2025-04-24 18:02:20 sudo poweroff -n
+  212  2025-04-24 14:41:33 cd /media/sf_git/devops/devops-train/
+  213  2025-04-24 14:41:38 cd terraform/
+  214  2025-04-24 14:41:40 ls
+  215  2025-04-24 14:41:47 v10-aws-multi_workspace-modul/
+  216  2025-04-24 14:42:36 terraform fmt
+  217  2025-04-24 14:46:44 terraform-docs markdown table ./path/to/module > documentation.md
+  218  2025-04-24 14:46:58 sudo snap install terraform-docs
+  219  2025-04-24 14:47:28 terraform-docs markdown table ./path/to/module > documentation.md
+  220  2025-04-24 14:50:23 ls -la ./path/to/module  # Проверьте существование пути
+  221  2025-04-24 15:22:04 terraform-docs markdown table . > documentation.md
+  222  2025-04-24 15:22:18 terraform-docs markdown table ./ > documentation.md
+  223  2025-04-24 15:22:59 ls
+  224  2025-04-24 15:23:08 cd ..
+  225  2025-04-24 15:23:43 terraform-docs markdown table ./terraform/v10-aws-multi_workspace-modul/ > documentation.md
+  226  2025-04-24 15:24:47 ls ./terraform/v10-aws-multi_workspace-modul/
+  227  2025-04-24 15:27:25 terraform-docs markdown table ./terraform/v10-aws-multi_workspace-modul/main/ > documentation.md
+  228  2025-04-24 15:29:56 terraform-docs markdown table --files "./variables.tf,./outputs.tf,./" . > documentation.md
+  229  2025-04-24 15:30:02 terraform-docs markdown table --files "./variables.tf,./outputs.tf" . > documentation.md
+  230  2025-04-24 15:30:17 cd terraform/v10-aws-multi_workspace-modul/
+  231  2025-04-24 15:30:20 terraform-docs markdown table --files "./variables.tf,./outputs.tf" . > documentation.md
+  232  2025-04-24 15:31:20 terraform-docs markdown table . --output-file DOCS.md
+  233  2025-04-24 15:31:36 terraform-docs markdown table ./ --output-file DOCS.md
+  234  2025-04-24 15:31:47 terraform-docs markdown table ./terraform/v10-aws-multi_workspace-modul/ --output-file DOCS.md
+  235  2025-04-24 15:31:55 cd ..
+  236  2025-04-24 15:32:02 terraform-docs markdown table ./v10-aws-multi_workspace-modul/ --output-file DOCS.md
+  237  2025-04-24 15:32:27 terraform-docs markdown table ./v10-aws-multi_workspace-modul/main/ --output-file DOCS.md
+  238  2025-04-24 16:05:25 mc
+  239  2025-05-12 18:04:02 kubectl get po
+  240  2025-05-12 18:04:09 kubectl get ns
+  241  2025-05-12 18:08:28 kubectl get po
+  242  2025-05-12 18:08:30 kubectl get ns
+  243  2025-05-12 18:08:39 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+  244  2025-05-12 18:09:10 mc
+  245  2025-05-12 18:09:16 cd ~
+  246  2025-05-12 18:09:17 ls
+  247  2025-05-12 18:11:25 sudo apt update
+  248  2025-05-12 18:12:12 sudo apt install -y curl gpg
+  249  2025-05-12 18:12:22 curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+  250  2025-05-12 18:12:28 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+  251  2025-05-12 18:12:32 sudo apt update
+  252  2025-05-12 18:12:54 sudo apt install -y helm
+  253  2025-05-12 18:13:28 helm --version
+  254  2025-05-12 18:13:32 helm -version
+  255  2025-05-12 18:13:35 helm -v
+  256  2025-05-12 18:13:40 helm --v
+  257  2025-05-12 18:13:52 helm config
+  258  2025-05-12 18:13:56 curl -L https://github.com/helmfile/helmfile/releases/download/v0.157.0/helmfile_0.157.0_linux_amd64.tar.gz | tar xz
+  259  2025-05-12 18:14:07 sudo mv helmfile /usr/local/bin/
+  260  2025-05-12 18:14:16 helmfile --version
+  261  2025-05-12 18:14:20 helm version
+  262  2025-05-12 18:14:36 kubectl cluster-info
+  263  2025-05-12 18:14:58 ls
+  264  2025-05-12 18:15:22 ls -la
+  265  2025-05-12 18:15:32 cd ~
+  266  2025-05-12 18:15:33 ls
+  267  2025-05-12 18:15:40 cd train
+  268  2025-05-12 18:15:45 ls
+  269  2025-05-12 18:16:20 cd /media/sf_git/devops/devops-train/
+  270  2025-05-12 18:16:51 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+  271  2025-05-12 18:16:57 helm repo update
+  272  2025-05-12 18:17:07 helm search repo ingress-nginx/ingress-nginx --versions
+  273  2025-05-12 18:17:19 helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx --namespace ingress-nginx --version 4.8.1
+  274  2025-05-12 18:18:02 helm list
+  275  2025-05-12 18:18:09 kurator course start
+  276  2025-05-12 18:18:29 helm get values -a ingress-nginx -n ingress-nginx
+  277  2025-05-12 18:18:40 helm show values ingress-nginx/ingress-nginx 
+  278  2025-05-12 18:19:01 kubectl describe svc ingress-nginx-controller -n ingress-nginx
+  279  2025-05-12 18:30:15 helm repo add jetstack https://charts.jetstack.io
+  280  2025-05-12 18:30:21 helm repo update
+  281  2025-05-12 18:30:28 helm install   cert-manager jetstack/cert-manager   --namespace cert-manager   --create-namespace   --version v1.13.1   --set installCRDs=true
+  282  2025-05-12 18:31:51 helm version
+  283  2025-05-12 18:32:33 helmfile --version
+  284  2025-05-12 18:52:21 kubectl describe svc ingress-nginx-controller -n LoadBalancer
+  285  2025-05-12 18:59:46 sudo poweroff -n
+  286  2025-05-13 15:23:57 kubectl describe svc ingress-nginx-controller -n ingress-nginx
+  287  2025-05-13 15:24:58 cd /media/sf_git/devops/devops-train/
+  288  2025-05-13 15:24:59 ls
+  289  2025-05-13 15:25:06 cd kubernetes-advanced/
+  290  2025-05-13 15:25:07 ls
+  291  2025-05-13 15:25:20 cd v1_helm/
+  292  2025-05-13 15:25:21 ls
+  293  2025-05-13 15:25:36 kubectl get ns
+  294  2025-05-13 17:25:32 Ls
+  295  2025-05-13 17:25:35 ls
+  296  2025-05-13 17:25:53 helm upgrade --install --values values-ovh.yaml ingress-nginx ingress-nginx/ingress-nginx --namespace ingress-nginx --version 4.8.1
+  297  2025-05-13 17:30:51 kubectl get po
+  298  2025-05-13 17:31:05 kubectl get ns
+  299  2025-05-13 17:31:21 kubectl -n default get po
+  300  2025-05-13 17:31:32 kubectl -n auth get po
+  301  2025-05-13 17:31:38 kubectl -ns auth get po
+  302  2025-05-13 17:31:48 kubectl -n vault get po
+  303  2025-05-13 17:44:53 helm upgrade --install --values values-ovh.yaml ingress-nginx ingress-nginx/ingress-nginx --namespace ingress-nginx --version 4.8.1
+  304  2025-05-13 17:46:42 kurator course start
+  305  2025-05-13 17:49:39 helm plugin install https://github.com/databus23/helm-diff
+  306  2025-05-13 17:50:22 helm diff -version
+  307  2025-05-13 17:50:36 helm diff -v
+  308  2025-05-13 17:51:12 helmfile diff
+  309  2025-05-13 17:51:21 helmfile diff --version
+  310  2025-05-13 17:51:24 helmfile diff -version
+  311  2025-05-13 17:51:27 helmfile diff -v
+  312  2025-05-13 17:51:38 helmfile diff
+  313  2025-05-13 21:32:39 poweroff -n
+  314  2025-05-13 21:32:53 sudo poweroff -n
+  315  2025-05-20 15:53:27 matrix
+  316  2025-05-20 15:53:30 cmatrix
+  317  2025-05-23 18:22:49 mc
+  318  2025-05-23 18:23:15 ls
+  319  2025-05-23 18:23:26 cat id_rsa.pub 
+  320  2025-05-23 18:26:47 sudo poweroff -n
+  321  2025-05-26 14:56:01 mc
+  322  2025-05-26 14:56:21 mkdir gitlab
+  323  2025-05-26 14:56:24 cd gitlab/
+  324  2025-05-26 14:56:25 ls
+  325  2025-05-26 14:56:27 curl -L "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh" | sudo bash
+  326  2025-05-26 15:04:28 sudo apt-get install gitlab-runner
+  327  2025-05-26 21:03:47 sudo poweroff -n
+  328  2025-05-27 14:49:01 sudo gitlab-runner register
+  329  2025-05-27 14:54:36 sudo gitlab-runner start
+  330  2025-05-27 21:19:28 sudo poweroff -n
+  331  2025-05-28 15:16:52 cd gitlab/
+  332  2025-05-28 15:16:53 ls
+  333  2025-05-28 15:16:57 git@gitlab.com:kadannr/devopstrain.git
+  334  2025-05-28 15:18:18 ssh git@gitlab.com:kadannr/devopstrain.git
+  335  2025-05-28 15:20:00 git clone git@gitlab.com:kadamn/devopstra.git
+  336  2025-05-28 15:20:50 cat ~/.ssh/id_rsa.pub 
+  337  2025-05-28 15:21:32 git clone git@gitlab.com:kadamn/devopstra.git
+  338  2025-05-28 15:22:11 git clone git@gitlab.com:kadannr/devopstra.git
+  339  2025-05-28 15:22:30 git clone https://gitlab.com/kadannr/devopstrain.git
+  340  2025-05-28 15:22:36 ls
+  341  2025-05-28 15:22:39 cd devopstrain/
+  342  2025-05-28 15:22:40 ls
+  343  2025-05-28 15:22:44 car README.md 
+  344  2025-05-28 15:22:53 cat README.md 
+  345  2025-05-28 15:22:55 clear
+  346  2025-05-28 15:23:16 git checkout -b shell
+  347  2025-05-28 15:23:47 vim  .gitlab-ci.yml
+  348  2025-05-28 15:25:40 git push origin shell
+  349  2025-05-28 15:26:18 git commit 
+  350  2025-05-28 15:26:43 git config --global user.email "kadannr@gmail.com"
+  351  2025-05-28 15:26:54 git config --global user.name "kadannr"
+  352  2025-05-28 15:26:57 git commit 
+  353  2025-05-28 15:27:13 git add 
+  354  2025-05-28 15:27:33 ls -la
+  355  2025-05-28 15:28:06 git add .
+  356  2025-05-28 15:28:46 git commit -m "adding config file"
+  357  2025-05-28 15:29:01 git push origin shell
+  358  2025-05-28 15:41:00 sudo gitlab-runner register
+  359  2025-05-28 20:08:21 sudo poweroff -n
+  360  2025-06-04 14:46:52 cd gitlab/
+  361  2025-06-04 14:46:53 ls
+  362  2025-06-04 19:53:54 cd devopstrain/
+  363  2025-06-04 19:53:54 ls
+  364  2025-06-04 19:53:59 car README.md 
+  365  2025-06-04 19:54:03 cat README.md 
+  366  2025-06-04 20:05:22 gitlab-runner register
+  367  2025-06-04 20:05:35 sudo gitlab-runner register
+  368  2025-06-04 20:08:48 cd /etc/gitlab-runner/
+  369  2025-06-04 20:08:49 ls
+  370  2025-06-04 20:08:57 sudo cd /etc/gitlab-runner/
+  371  2025-06-04 20:09:46 mc
+  372  2025-06-04 20:10:26 sudo su
+  373  2025-06-04 20:27:35 ls
+  374  2025-06-04 20:27:37 git checkout main
+  375  2025-06-04 20:27:44 git checkout -b docker
+  376  2025-06-04 20:27:53 ls
+  377  2025-06-04 20:28:03 vim .gitlab-ci.yml
+  378  2025-06-04 20:29:36 git commit -m "adding config file for docker"
+  379  2025-06-04 20:33:20 git add .
+  380  2025-06-04 20:33:42 git push origin docker
+  381  2025-06-04 20:37:50 git checkout -b kaniko
+  382  2025-06-04 20:38:19 vim main.go
+  383  2025-06-04 20:38:40 vim Dockerfile
+  384  2025-06-04 20:39:09 mkdir kaniko
+  385  2025-06-04 20:39:12 ls
+  386  2025-06-04 20:39:17 mv main.go kaniko/
+  387  2025-06-04 20:39:26 ls
+  388  2025-06-04 20:39:34 mv Dockerfile ka
+  389  2025-06-04 20:39:37 ls
+  390  2025-06-04 20:39:47 mv ka Dockerfile
+  391  2025-06-04 20:39:52 cat Dockerfile 
+  392  2025-06-04 20:39:58 mv Dockerfile  kaniko/
+  393  2025-06-04 20:40:00 cd kaniko/
+  394  2025-06-04 20:40:01 ls
+  395  2025-06-04 20:40:07 vim .gitlab-ci.yml
+  396  2025-06-04 20:42:30 echo -n "username:password" | base64
+  397  2025-06-04 20:42:48 cat ~/.docker/config.json
+  398  2025-06-04 20:47:58 sudo poweroff -n
+  399  2025-06-05 18:04:53 cmatrix
+  400  2025-06-05 19:56:06 sudo poweroff -n
+  401  2025-06-05 18:05:04 cmatrix
+  402  2025-06-08 11:31:24 sudo poweroff -n
+  403  2025-06-28 21:26:21 nvim
+  404  2025-07-18 16:49:27 cat .ssh/id_rsa
+  405  2025-07-18 16:52:04 cat .ssh/id_rsa.pub 
+  406  2025-07-18 16:47:33 cat .ssh/id_rsa
+  407  2025-07-18 16:50:57 cd .ssh/
+  408  2025-07-18 16:50:58 ls
+  409  2025-07-18 16:51:48 cat id_rsa.pub 
+  410  2025-07-18 16:53:31 ssh -i ~/.ssh/id_rsa kadannr@51.77.105.242
+  411  2025-07-18 16:57:40 cat id_rsa
+  412  2025-07-18 20:51:52 sudo poweroff -n
+  413  2025-08-13 18:21:34 ssh 51.77.105.242@kadannr
+  414  2025-08-13 18:21:41 ssh kadannr@51.77.105.242
+  415  2025-08-15 10:08:22 nvim
+  416  2025-08-15 10:24:58 cmatrix
+  417  2025-08-15 14:14:02 ansible --version
+  418  2025-08-15 14:14:40 sudo apt-add-repository ppa:ansible/ansible
+  419  2025-08-15 14:15:26 sudo apt-get install ansible
+  420  2025-08-15 14:18:14 ansible --version
+  421  2025-08-15 14:19:20 ьс
+  422  2025-08-15 14:19:21 mc
+  423  2025-08-15 14:20:28 ssh 51.77.105.242@kadannr
+  424  2025-08-15 14:20:42 ssh kadannr@51.77.105.242
+  425  2025-08-15 14:22:08 pin 8.8.8.8
+  426  2025-08-15 14:22:14 ping 8.8.8.8
+  427  2025-08-15 14:22:21 ping 51.77.105.242
+  428  2025-08-15 14:25:04 traceroute 51.77.105.242
+  429  2025-08-15 14:28:32 curp 2ip
+  430  2025-08-15 14:28:37 curl 2ip
+  431  2025-08-15 14:28:41 curl 2ip.ru
+  432  2025-08-15 14:29:46 ping 51.77.105.242
+  433  2025-08-15 18:27:37 sudo poweroff -
+  434  2025-08-15 18:27:41 sudo poweroff -n
+  435  2025-08-16 09:27:51 ping 51.77.105.242
+  436  2025-08-16 09:34:24 ssh kadannr@51.77.105.242
+  437  2025-08-16 09:34:51 telnet kadannr@51.77.105.242
+  438  2025-08-16 09:34:55 telnet 51.77.105.242
+  439  2025-08-16 09:53:16 ping 51.77.105.242
+  440  2025-08-16 10:02:07 telnet 51.77.105.242 22
+  441  2025-08-16 10:03:43 ping 51.77.105.242
+  442  2025-08-16 10:08:24 telnet ubuntu@51.77.105.242
+  443  2025-08-16 10:08:43 ssh ubuntu@51.77.105.242
+  444  2025-08-16 10:10:26 traceroute 51.77.105.242
+  445  2025-08-16 10:14:44 telnet 51.77.105.242 22
+  446  2025-08-16 10:17:34 ssh ubuntu@51.77.105.242
+  447  2025-08-16 10:17:59 ssh kadannr@51.77.105.242
+  448  2025-08-16 11:05:03 telnet kadannr@51.77.105.242
+  449  2025-08-16 11:05:09 ssh kadannr@51.77.105.242
+  450  2025-08-16 11:05:58 sudo vim /etc/ssh/sshd_config
+  451  2025-08-16 11:08:09 telnet 51.77.105.242
+  452  2025-08-16 20:37:13 sudo poweroff -n
+  453  2025-08-23 09:05:54 ssh kadannr@51.77.105.242
+  454  2025-08-23 09:06:27 ping 51.77.105.242
+  455  2025-08-23 09:29:54 ssh kadannr@51.77.105.242
+  456  2025-08-23 09:30:31 ls ~/.ssh/
+  457  2025-08-23 09:31:23 ssh-keygen -f "/home/kadannr/.ssh/known_hosts" -R "51.77.105.242"
+  458  2025-08-23 09:31:25 ssh kadannr@51.77.105.242
+  459  2025-08-23 09:33:07 vim ~/.ssh/config 
+  460  2025-08-23 09:34:50 ls ~/.ssh/
+  461  2025-08-23 09:53:07 ssh-copy-id server-train 
+  462  2025-08-23 09:53:22 ssh server-train 
+  463  2025-08-23 09:54:01 ansible --version
+  464  2025-08-23 09:54:06 ls
+  465  2025-08-23 09:54:36 mkdir ansible
+  466  2025-08-23 09:54:38 cd ansible/
+  467  2025-08-23 09:54:59 mkdir ansible-project
+  468  2025-08-23 09:55:05 ls
+  469  2025-08-23 09:55:08 cd ansible-project/
+  470  2025-08-23 09:55:17 mkdir tasks
+  471  2025-08-23 09:55:26 nvim setup.yml
+  472  2025-08-23 09:56:07 cd ..
+  473  2025-08-23 09:56:18 nvim playbok.yml
+  474  2025-08-23 09:56:45 nvim Makefile
+  475  2025-08-23 09:58:21 make check
+  476  2025-08-23 09:58:28 ls
+  477  2025-08-23 09:58:34 mv Makefile ansible-project/
+  478  2025-08-23 09:58:44 mv playbok.yml ansible-project/
+  479  2025-08-23 09:58:46 cd ansible-project/
+  480  2025-08-23 09:58:47 ls
+  481  2025-08-23 09:58:54 make check
+  482  2025-08-23 09:59:11 vim Makefile 
+  483  2025-08-23 09:59:48 mv playbok.yml playbook.yml 
+  484  2025-08-23 09:59:53 make check
+  485  2025-08-23 10:01:49 ls
+  486  2025-08-23 10:01:56 mv setup.yml tasks/
+  487  2025-08-23 10:01:59 make check
+  488  2025-08-23 10:03:01 python3 --version
+  489  2025-08-23 10:03:10 ssh server-train 
+  490  2025-08-23 10:03:33 sudo apt update && sudo apt install -y python3 python3-apt
+  491  2025-08-23 10:04:47 python3 --version
+  492  2025-08-23 10:06:36 sudo power0ff -n
+  493  2025-08-23 10:06:40 sudo poweroff -n
+  494  2025-08-23 10:08:41 cd ansible/
+  495  2025-08-23 10:08:42 ls
+  496  2025-08-23 10:08:43 a
+  497  2025-08-23 10:08:46 cd ansible-project/
+  498  2025-08-23 10:08:47 ls
+  499  2025-08-23 10:09:31 sudo apt update && sudo apt upgrade -y
+  500  2025-08-23 10:10:00 sudo apt install -y software-properties-common
+  501  2025-08-23 10:10:10 sudo add-apt-repository ppa:deadsnakes/ppa -y
+  502  2025-08-23 10:10:45 sudo apt update
+  503  2025-08-23 10:10:59 sudo apt install -y python3.12 python3.12-dev python3.12-venv python3.12-distutils
+  504  2025-08-23 10:11:20 sudo apt install -y python3.12
+  505  2025-08-23 10:11:54 python3 --version
+  506  2025-08-23 10:12:27 sudo update-alternatives --config python3
+  507  2025-08-23 10:12:52 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1
+  508  2025-08-23 10:12:57 python3 --version
+  509  2025-08-23 10:43:10 ssh server-train 
+  510  2025-08-23 10:44:58 make check
+  511  2025-08-23 10:46:09 make apply
+  512  2025-08-23 10:48:57 ls
+  513  2025-08-23 10:49:20 mkdir inventory
+  514  2025-08-23 10:49:35 nvim inventory/hosts
+  515  2025-08-23 10:54:41 ssh -J kadannr@server-train:22 kadannr@192.168.1.53
+  516  2025-08-23 11:02:55 nvim Makefile 
+  517  2025-08-23 11:03:05 mv Makefile_backup
+  518  2025-08-23 11:03:15 nvim Makefile
+  519  2025-08-23 11:27:53 nvim tasks/setup.yml 
+  520  2025-08-23 11:32:59 mkdir templates
+  521  2025-08-23 11:33:24 nvim templates/bepasty.j2
+  522  2025-08-23 11:34:15 nvim tasks/setup.yml 
+  523  2025-08-23 11:36:23 make check
+  524  2025-08-23 11:38:31 ssh server-train 
+  525  2025-08-23 11:47:51 make check
+  526  2025-08-23 11:49:02 ssh server-train 
+  527  2025-08-23 12:06:29 make check
+  528  2025-08-23 12:07:15 ssh-copy-id kadannr@server-train 
+  529  2025-08-23 12:07:22 make check
+  530  2025-08-23 12:08:05 ssh server-train 
+  531  2025-08-23 12:12:34 nvim ~/.ssh/jump_key
+  532  2025-08-23 12:12:44 nvim ~/.ssh/config 
+  533  2025-08-23 12:16:45 cat ~/.ssh/config 
+  534  2025-08-23 12:17:03 ssh target-server 
+  535  2025-08-23 12:17:43 ssh server-train 
+  536  2025-08-23 12:23:26 cat ~/.ssh/jump_key 
+  537  2025-08-23 12:24:16 ssh jump-server 
+  538  2025-08-23 12:24:31 cd ~/.ssh/
+  539  2025-08-23 12:24:37 nvim config 
+  540  2025-08-23 12:25:19 ssh jump-server 
+  541  2025-08-23 12:25:24 nvim config 
+  542  2025-08-23 12:26:11 ssh jump-server 
+  543  2025-08-23 12:26:32 ls
+  544  2025-08-23 12:26:34 cat config 
+  545  2025-08-23 12:26:38 ssh target-server 
+  546  2025-08-23 12:26:58 nvim config 
+  547  2025-08-23 12:27:19 ssh target-server 
+  548  2025-08-23 12:28:03 chmod 664 jump_key 
+  549  2025-08-23 12:28:04 ssh target-server 
+  550  2025-08-23 12:28:33 chmod 600 jump_key 
+  551  2025-08-23 12:28:34 ssh target-server 
+  552  2025-08-23 12:30:20 cd ~/ansible/ansible-project/
+  553  2025-08-23 12:30:21 ls
+  554  2025-08-23 12:30:28 make check
+  555  2025-08-23 12:31:48 nvim inventory/hosts 
+  556  2025-08-23 12:33:39 ansible all -i inventory -m ping
+  557  2025-08-23 12:34:14 nvim inventory/hosts 
+  558  2025-08-23 12:34:43 cat inventory/hosts 
+  559  2025-08-23 12:53:59 vim  inventory/hosts 
+  560  2025-08-23 12:54:22 ssh target-server 
+  561  2025-08-23 12:54:50 make check
+  562  2025-08-23 12:55:53 cat Makefile 
+  563  2025-08-23 12:56:08 cat inventory/hosts 
+  564  2025-08-23 12:56:41 nvim inventory/hosts 
+  565  2025-08-23 12:56:58 nvim ~/.ssh/config 
+  566  2025-08-23 12:57:19 ssh web-server 
+  567  2025-08-23 12:58:31 ansible all -i inventory.yml -m ping
+  568  2025-08-23 12:58:56 ansible all -i inventory -m ping
+  569  2025-08-23 12:59:48 ansible web-server -i inventory -m ping
+  570  2025-08-23 13:00:34 cat inventory/hosts 
+  571  2025-08-23 13:02:01 nvim inventory/hosts 
+  572  2025-08-23 13:02:28 make check
+  573  2025-08-23 13:03:55 ssh server-train 
+  574  2025-08-23 13:05:52 nvim inventory/hosts 
+  575  2025-08-23 13:06:40 cat Makefile 
+  576  2025-08-23 13:06:47 cat inventory/hosts 
+  577  2025-08-23 13:23:29 cat inventory/hosts 
+  578  2025-08-23 13:23:48 cp inventory/hosts inventory/hosts_backup
+  579  2025-08-23 13:23:52 vim inventory/hosts 
+  580  2025-08-23 13:24:57 make check
+  581  2025-08-23 13:25:41 nvim Makefile 
+  582  2025-08-23 13:32:19 make ping-web 
+  583  2025-08-23 13:32:42 make ping-proxy 
+  584  2025-08-23 13:34:00 nvim inventory/hosts
+  585  2025-08-23 13:34:49 ls
+  586  2025-08-23 13:34:52 cd inventory/
+  587  2025-08-23 13:34:53 ls
+  588  2025-08-23 13:34:59 rm hosts
+  589  2025-08-23 13:35:09 mv hosts_backup hosts
+  590  2025-08-23 13:35:10 ls
+  591  2025-08-23 13:35:12 cat hosts 
+  592  2025-08-23 13:35:40 cd ..
+  593  2025-08-23 13:35:41 ls
+  594  2025-08-23 13:35:59 nvim inventory/hosts 
+  595  2025-08-23 13:38:47 nvim tasks/setup.yml 
+  596  2025-08-23 13:39:06 cp tasks/setup.yml tasks/setup.yml_backup
+  597  2025-08-23 13:39:09 nvim tasks/setup.yml 
+  598  2025-08-23 13:39:36 make check
+  599  2025-08-23 13:40:40 ls -la ~/.ssh/
+  600  2025-08-23 13:41:36 pip3 install --upgrade winrm requests-kerberos
+  601  2025-08-23 13:41:57 ansible -m ping 192.168.1.53 -i inventory/hosts
+  602  2025-08-23 19:19:52 cd inventory
+  603  2025-08-23 19:19:53 ls
+  604  2025-08-23 19:19:58 nvim hosts 
+  605  2025-08-23 19:23:03 cd ..
+  606  2025-08-23 19:23:07 nvim Makefile 
+  607  2025-08-23 19:23:52 cd t
+  608  2025-08-23 19:23:56 cd tasks/
+  609  2025-08-23 19:23:57 ls
+  610  2025-08-23 19:24:04 nvim setup.yml
+  611  2025-08-23 19:25:16 cd ..
+  612  2025-08-23 19:25:19 make check 
+  613  2025-08-23 19:26:42 nvim inventory/hosts 
+  614  2025-08-23 19:26:58 make check 
+  615  2025-08-23 19:27:50 pip3 install --upgrade winrm requests-kerberos
+  616  2025-08-23 19:28:42 sudo apt-get update
+  617  2025-08-23 19:29:19 sudo apt-get install python3-apt
+  618  2025-08-23 19:29:31 sudo apt-get install python3-pip
+  619  2025-08-23 19:30:22 sudo apt-get install software-properties-common
+  620  2025-08-23 19:30:34 pip3 install --upgrade pip
+  621  2025-08-23 19:30:48 sudo pip3 install --upgrade pip
+  622  2025-08-23 19:30:55 pip3 install --upgrade winrm requests-kerberos
+  623  2025-08-23 19:31:15 sudo apt-get install python3-winrm python3-requests-kerberos
+  624  2025-08-23 19:31:24 pip3 cache purge
+  625  2025-08-23 19:31:33 sudo -H pip3 install --upgrade winrm requests-kerberos
+  626  2025-08-23 19:32:01 sudo apt-get install python3-distutils
+  627  2025-08-23 19:32:13 sudo apt-get install build-essential python3-dev
+  628  2025-08-23 19:32:36 python3 --version
+  629  2025-08-23 19:32:39 pip3 --version
+  630  2025-08-23 19:32:52 sudo apt-get remove python3-pip
+  631  2025-08-23 19:33:06 sudo apt-get install python3-pip
+  632  2025-08-23 19:33:25 sudo apt-get install python3-distutils
+  633  2025-08-23 19:33:31 sudo apt-get install build-essential python3-dev
+  634  2025-08-23 19:33:38 pip3 --version
+  635  2025-08-23 19:34:07 sudo apt-get install python3-distutils
+  636  2025-08-23 19:34:09 sudo apt-get install python3-setuptools
+  637  2025-08-23 19:34:11 sudo apt-get install python3-wheel
+  638  2025-08-23 19:34:13 sudo apt-get install python3-dev
+  639  2025-08-23 19:34:15 sudo apt-get install build-essential
+  640  2025-08-23 19:34:28 pip3 --version
+  641  2025-08-23 19:34:55 sudo -H pip3 install --upgrade setuptools
+  642  2025-08-23 19:35:57 sudo yum install python3-distutils
+  643  2025-08-23 19:36:03 sudo apt install python3-distutils
+  644  2025-08-23 19:37:52 cmatrix
+  645  2025-08-23 19:38:44 sudo apt install --reinstall python3-distutils
+  646  2025-08-23 19:39:03 curl -sS https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+  647  2025-08-23 19:39:05 python3 get-pip.py --force-reinstall
+  648  2025-08-23 19:40:07 make check
+  649  2025-08-23 19:40:45 pip3 install --upgrade winrm requests-kerberos
+  650  2025-08-23 19:40:58 sudo pip3 install --upgrade winrm requests-kerberos
+  651  2025-08-23 19:41:30 sudo apt-get update
+  652  2025-08-23 19:41:41 sudo apt-get install python3-distutils
+  653  2025-08-23 19:41:43 sudo apt-get install python3-setuptools
+  654  2025-08-23 19:41:45 sudo apt-get install python3-wheel
+  655  2025-08-23 19:41:47 sudo apt-get install python3-dev
+  656  2025-08-23 19:41:49 sudo apt-get install build-essential
+  657  2025-08-23 19:41:57 sudo pip3 install --upgrade pip
+  658  2025-08-23 19:42:01 sudo pip3 install winrm requests-kerberos
+  659  2025-08-23 19:42:44 nvim inventory/hosts 
+  660  2025-08-23 19:43:20 make check
+  661  2025-08-23 19:44:09 sudo nano /usr/lib/python3/dist-packages/winrm/__init__.py
+  662  2025-08-23 19:44:27 sudo тмшь /usr/lib/python3/dist-packages/winrm/__init__.py
+  663  2025-08-23 19:44:40 sudo nvim /usr/lib/python3/dist-packages/winrm/__init__.py
+  664  2025-08-23 19:46:38 sudo nvim /usr/lib/python3/dist-packages/requests_kerberos/kerberos_.py
+  665  2025-08-23 19:47:45 sudo nvim /usr/lib/python3/dist-packages/winrm/encryption.py
+  666  2025-08-23 19:48:39 make check
+  667  2025-08-23 20:10:38 ssh -J kadannr@51.77.105.242 kadannr@192.168.1.53
+  668  2025-08-23 20:11:32 ssh server-train 
+  669  2025-08-23 20:19:44 ls ~/.ssh/
+  670  2025-08-23 20:47:06 sudo poweroff -n
+  671  2025-08-23 20:14:38 cd .ssh/
+  672  2025-08-23 20:14:40 ls
+  673  2025-08-23 20:15:03 cat jump_key 
+  674  2025-08-23 20:16:28 ls -la | grep id
+  675  2025-08-23 20:16:43 ls -la | grep pro
+  676  2025-08-23 20:16:47 ls -la | grep jum
+  677  2025-08-23 20:18:11 cd ~/ansible/ansible-project/
+  678  2025-08-23 20:18:12 ls
+  679  2025-08-23 20:18:55 nvim inventory/hosts 
+  680  2025-08-23 20:21:47 make check
+  681  2025-08-23 20:22:49 nvim inventory/hosts 
+  682  2025-08-23 20:23:15 make check
+  683  2025-08-24 09:16:31 nvim inventory/hosts 
+  684  2025-08-24 09:16:52 make check
+  685  2025-08-24 09:19:18 cat inventory/hosts 
+  686  2025-08-24 09:20:23 nvim roles/proxy-server/tasks/main.yml 
+  687  2025-08-24 09:20:45 nvim roles/proxy-server/templates/caddy.j2 
+  688  2025-08-24 09:21:36 cat roles/proxy-server/templates/caddy.j2 
+  689  2025-08-24 09:22:15 make check
+  690  2025-08-24 09:24:51 nvim roles/proxy-server/tasks/main.yml 
+  691  2025-08-24 09:50:10 ssh web-server 
+  692  2025-08-24 09:50:27 ssh server-train 
+  693  2025-08-24 09:50:41 sudo poweroff -n
+  694  2025-08-24 07:45:32 cmatrix
+  695  2025-08-24 08:01:53 ssh server-train 
+  696  2025-08-24 09:16:16 cat ~/ansible/ansible-project/inventory/hosts 
+  697  2025-08-24 09:24:17 nvim ~/ansible/ansible-project/inventory/hosts 
+  698  2025-08-24 09:24:37 cd ~/ansible-project/
+  699  2025-08-24 07:46:07 ssh server-train 
+  700  2025-08-24 07:47:34 cd ansible/ansible-project/
+  701  2025-08-24 07:47:43 nvim tasks/setup.yml
+  702  2025-08-24 07:48:01 make check
+  703  2025-08-24 07:49:14 make apply
+  704  2025-08-24 07:56:30 ls templates
+  705  2025-08-24 07:57:17 nvim tasks/setup.yml
+  706  2025-08-24 08:00:27 make check
+  707  2025-08-24 08:01:07 make apply
+  708  2025-08-24 08:01:38 nvim templates/caddy.j2
+  709  2025-08-24 08:02:24 nvim tasks/setup.yml
+  710  2025-08-24 08:04:17 make 
+  711  2025-08-24 08:05:00 make apply
+  712  2025-08-24 08:07:45 nvim inventory/hosts 
+  713  2025-08-24 08:08:19 make check
+  714  2025-08-24 08:09:34 make apply
+  715  2025-08-24 08:11:28 make check
+  716  2025-08-24 08:12:54 nvim inventory/hosts 
+  717  2025-08-24 08:13:14 nvim tasks/setup.yml
+  718  2025-08-24 08:13:46 make check
+  719  2025-08-24 08:14:37 make apply
+  720  2025-08-24 08:16:27 nvim templates/caddy.j2 
+  721  2025-08-24 08:57:44 nvim inventory/hosts 
+  722  2025-08-24 08:57:56 nvim tasks/setup.yml
+  723  2025-08-24 08:58:19 make check
+  724  2025-08-24 08:59:49 ssh web-server 
+  725  2025-08-24 08:59:59 ssh server-train 
+  726  2025-08-24 09:08:27 ls
+  727  2025-08-24 09:08:30 cd ~
+  728  2025-08-24 09:08:31 ls
+  729  2025-08-24 09:09:15 wget https://linux.lifeisfile.com/media/linux/ansible-project-step4.tar.xz
+  730  2025-08-24 09:10:09 tar -xvf ansible-project-step4.tar.xz 
+  731  2025-08-24 09:10:17 ls
+  732  2025-08-24 09:10:55 cd ansible-project/
+  733  2025-08-24 09:10:55 l
+  734  2025-08-24 09:10:57 ls
+  735  2025-08-24 09:11:15 mc
+  736  2025-08-26 09:55:22 cd ansible
+  737  2025-08-26 09:55:38 cd ansible-project/
+  738  2025-08-26 09:55:39 ls
+  739  2025-08-26 09:55:48 cd ..
+  740  2025-08-26 09:55:51 cd ansible-project/
+  741  2025-08-26 09:55:54 ls
+  742  2025-08-26 09:59:31 make check
+  743  2025-08-26 10:01:57 make apply
+  744  2025-08-26 10:18:50 ansible-galaxy collection install community.general
+  745  2025-08-26 10:21:28 nvim proxmox.yml
+  746  2025-08-26 10:22:20 cd ..
+  747  2025-08-26 10:22:23 ansible-inventory -i proxmox.yml --list
+  748  2025-08-26 10:22:35 ansible-inventory -i inventory/proxmox.yml --list
+  749  2025-08-26 10:23:55 nvim inventory/proxmox.yml
+  750  2025-08-26 10:25:04 ansible-inventory -i inventory/proxmox.yml --list
+  751  2025-08-26 10:26:43 curl -k https://pm.lifeisfile.com:8006/api2/json/access/ticket
+  752  2025-08-26 10:27:35 nc -zv pm.lifeisfile.com 8006
+  753  2025-08-26 10:27:43 openssl s_client -connect pm.lifeisfile.com:8006
+  754  2025-08-26 10:28:07 nvim inventory/proxmox.yml
+  755  2025-08-26 20:50:16 ansible-inventory -i inventory/proxmox.yml --list
+  756  2025-08-26 20:52:42 cat inventory/proxmox.yml 
+  757  2025-08-26 20:54:01 ls -la
+  758  2025-08-26 20:54:06 cd inventory/
+  759  2025-08-26 20:54:08 ls -la
+  760  2025-08-26 20:54:49 cat hosts 
+  761  2025-08-26 21:02:28 ьс
+  762  2025-08-26 21:02:31 mc
+  763  2025-08-26 21:02:41 nvim proxmox.yml 
+  764  2025-08-26 21:02:54 nvim cd ..
+  765  2025-08-26 21:02:58 cd ..
+  766  2025-08-26 21:03:03 nvim playbook.yml 
+  767  2025-08-26 21:03:30 make check
+  768  2025-08-26 21:04:03 nvim playbook.yml 
+  769  2025-08-26 21:05:17 make check
+  770  2025-08-26 21:05:30 nvim playbook.yml 
+  771  2025-08-26 21:06:11 make check
+  772  2025-08-26 21:06:24 nvim playbook.yml 
+  773  2025-08-26 21:06:38 make check
+  774  2025-08-26 21:06:55 nvim playbook.yml 
+  775  2025-08-26 21:07:07 make check
+  776  2025-08-26 21:07:45 nvim playbook.yml 
+  777  2025-08-26 21:09:12 make check
+  778  2025-08-26 21:09:25 nvim playbook.yml 
+  779  2025-08-26 21:10:26 make check
+  780  2025-08-26 21:11:01 sudo poweroff -n
+  781  2025-08-26 09:59:40 cd ansible-project/
+  782  2025-08-26 09:59:41 ls
+  783  2025-08-26 10:01:05 mc
+  784  2025-08-29 09:41:18 ды
+  785  2025-08-29 09:41:20 ls
+  786  2025-08-29 09:41:28 ssh web-server 
+  787  2025-08-29 10:23:13 ssh server-train 
+  788  2025-08-29 18:14:18 sudo poweroff -n
+  789  2025-08-29 09:46:50 sudo aa-logprof
+  790  2025-08-29 09:47:06 ssh web-server 
+  791  2025-08-30 08:42:35 ssh server-train 
+  792  2025-08-30 08:53:34 cd ansible-project/
+  793  2025-08-30 08:53:36 ls
+  794  2025-08-30 08:53:41 cat playbook.yml 
+  795  2025-08-30 08:54:01 make check
+  796  2025-08-30 09:03:30 nvim playbook.yml 
+  797  2025-08-30 09:04:52 make check
+  798  2025-08-30 09:08:26 ssh server-train 
+  799  2025-08-30 09:13:46 sudo semanage fcontext -a -t httpd_exec_t '/usr/bin/caddy'
+  800  2025-08-30 09:14:34 ssh server-train 
+  801  2025-08-30 09:40:27 sudo poweroff -n
+  802  2025-09-18 08:51:10 cat .kube/config
+  803  2025-09-18 08:52:24 sudo apt installl helm
+  804  2025-09-18 08:52:40 sudo apt install helm
+  805  2025-09-18 09:01:06 sudo apt update && sudo apt install -y strongswan network-manager-strongswan libcharon-extra-plugins
+  806  2025-09-18 09:02:29 sudo apt install -y strongswan network-manager-strongswan libcharon-extra-plugins
+  807  2025-09-18 09:19:24 cd /mnt/
+  808  2025-09-18 09:19:25 ls
+  809  2025-09-18 09:19:31 cd /
+  810  2025-09-18 09:19:32 mc
+  811  2025-09-18 09:12:57 sudo apt update && sudo apt install -y strongswan network-manager-strongswan libcharon-extra-plugins
+  812  2025-09-18 09:13:26 sudo apt install -y strongswan network-manager-strongswan libcharon-extra-plugins
+  813  2025-09-18 09:14:04 sudo apt install helm
+  814  2025-09-18 09:14:27 helmfile version
+  815  2025-09-18 09:14:36 kubectl version
+  816  2025-09-18 09:15:02 helm version
+  817  2025-09-18 09:17:43 ls
+  818  2025-09-18 09:17:47 mc
+  819  2025-09-18 09:19:45 ls
+  820  2025-09-18 09:19:49 cd /media/
+  821  2025-09-18 09:19:50 ls
+  822  2025-09-18 09:19:53 cd sf_devops/
+  823  2025-09-18 09:20:07 cd sf_git/devops/
+  824  2025-09-18 09:20:08 ls
+  825  2025-09-18 09:20:34 cd /media/sf_git/devops/devops-train/kubernetes-advanced/
+  826  2025-09-18 09:20:35 ls
+  827  2025-09-18 09:23:52 cd v2_helm_create/
+  828  2025-09-18 09:23:54 pwd
+  829  2025-09-18 09:40:19 helm create mychart
+  830  2025-09-18 09:42:21 cd ../v1_helm/
+  831  2025-09-18 09:42:26 helm create mychart
+  832  2025-09-18 09:43:22 helmfile diff
+  833  2025-09-18 09:43:56 helm apply
+  834  2025-09-18 09:44:01 apply
+  835  2025-09-18 09:44:12 helmfile apply
+  836  2025-09-18 09:49:26 helm list
+  837  2025-09-18 09:49:43 kubectl get po
+  838  2025-09-18 09:50:54 helm template
+  839  2025-09-18 09:51:11 helm mychart
+  840  2025-09-18 09:51:45 helm template mychart/
+  841  2025-09-18 09:56:21 ls
+  842  2025-09-18 09:56:29 cd mychart2
+  843  2025-09-18 09:56:33 docker build -t [dockerhub login]/golang-redis-app:0.0.1  .
+  844  2025-09-18 10:05:03 helm create mychart
+  845  2025-09-18 10:05:12 rm -rf mychart/templates/*
+  846  2025-09-18 10:05:17 rm -f mychart/values.yaml
+  847  2025-09-18 10:08:12 melm init ./mychart/
+  848  2025-09-18 10:09:33 helm lint ./mychart
+  849  2025-09-18 10:12:02 ls -la mychart/
+  850  2025-09-18 10:12:42 helm lint ./mychart
+  851  2025-09-18 10:12:58 helm template mychart ./mychart --namespace default
+  852  2025-09-18 10:21:58 sudo poweroff -n
+  853  2025-09-22 20:23:45 cd /media/sf_git/devops/devops-train/kubernetes-advanced/
+  854  2025-09-22 20:23:46 ls
+  855  2025-09-22 20:23:48 cd v1_helm/
+  856  2025-09-22 20:23:49 ls
+  857  2025-09-22 20:24:05 helm create mychart
+  858  2025-09-22 20:32:29 helmfile.yaml
+  859  2025-09-22 20:33:35 helmfile diff
+  860  2025-09-22 20:44:02 cr creating_helm/
+  861  2025-09-22 20:44:06 cd creating_helm/
+  862  2025-09-22 20:45:36 docker build -t my-go-app .
+  863  2025-09-22 20:55:29 docker image ls
+  864  2025-09-22 20:55:41 docker image rm my-go-app:latest 
+  865  2025-09-22 20:55:43 docker image ls
+  866  2025-09-22 20:56:20 docker build -t kadannrheim/golang-redis-app:0.0.1  .
+  867  2025-09-22 20:56:38 docker image ls
+  868  2025-09-22 21:25:37 sudo poweroff -n
+  869  2025-09-26 08:46:56 cd /media/sf_git/devops/devops-train/kubernetes-advanced/
+  870  2025-09-26 08:46:57 ls
+  871  2025-09-26 08:46:58 cd v1_helm/
+  872  2025-09-26 08:47:00 ls
+  873  2025-09-26 08:48:52 docker image ls
+  874  2025-09-26 08:49:18 docker push kadannrheim/golang-redis-app:0.0.1
+  875  2025-09-26 20:58:14 sudo poweroff -n
+  876  2025-09-27 09:11:48 kubectl get service -A | grep ingress
+  877  2025-09-27 08:49:05 docker push kadannrheim/golang-redis-app:0.0.1
+  878  2025-09-27 08:49:16 cd /media/sf_git/devops/devops-train/kubernetes-advanced/
+  879  2025-09-27 08:49:19 cd v1_helm/
+  880  2025-09-27 08:49:19 ls
+  881  2025-09-27 08:50:53 docker login
+  882  2025-09-27 08:51:00 docker push kadannrheim/golang-redis-app:0.0.1
+  883  2025-09-27 08:52:23 docker login
+  884  2025-09-27 08:53:46 docker build -t kadannr/golang-redis-app:0.0.1  .
+  885  2025-09-27 08:54:25 cd creating_helm/
+  886  2025-09-27 08:54:27 docker build -t kadannr/golang-redis-app:0.0.1  .
+  887  2025-09-27 08:54:41 docker push kadannr/golang-redis-app:0.0.1
+  888  2025-09-27 08:55:03 docker image ls
+  889  2025-09-27 09:14:56 ды
+  890  2025-09-27 09:14:57 ls
+  891  2025-09-27 09:15:02 cd golang-redis-app-chart/
+  892  2025-09-27 09:15:02 ls
+  893  2025-09-27 09:15:17 helm template .
+  894  2025-09-27 09:16:38 yamllint values.yaml 
+  895  2025-09-27 09:17:05 sudo apt install yamllint
+  896  2025-09-27 09:17:22 yamllint values.yaml 
+  897  2025-09-27 09:18:50 ls
+  898  2025-09-27 09:19:55 rm values.yaml 
+  899  2025-09-27 09:20:02 cat > values.yaml << 'EOF'
+image:
+  repository: kadannrheim/golang-redis-app  # замените на ваш логин
+  pullPolicy: IfNotPresent
+  tag: "0.0.1"
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+service:
+  name: golang-redis-app
+  type: ClusterIP
+  port: 8080
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+  hosts:
+    - host: kadannr.online
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: golang-redis-app-tls
+      hosts:
+        - kadannr.online
+EOF
+  900  2025-09-27 09:20:22 helm template .
+  901  2025-09-27 09:20:45 cd ..
+  902  2025-09-27 09:20:46 ls
+  903  2025-09-27 09:20:59 helm package golang-redis-app-chart
+  904  2025-09-27 09:21:54 docker login
+  905  2025-09-27 09:23:04 cat ~/.docker/config.json
+  906  2025-09-27 09:23:31 ip addr
+  907  2025-09-27 09:25:34 helm push golang-redis-app-chart-0.1.0.tgz  oci://registry-1.docker.io/kadannr
+  908  2025-09-27 09:25:55 kubectl get po
+  909  2025-09-27 09:26:00 helm upgrade --install -n default golang-redis-app   oci://registry-1.docker.io/[dockerhub login]/golang-redis-app-chart --version 0.1.0
+  910  2025-09-27 09:26:16 helm upgrade --install -n default golang-redis-app   oci://registry-1.docker.io/kadannr/golang-redis-app-chart --version 0.1.0
+  911  2025-09-27 09:28:28 kubectl get po
+  912  2025-09-27 09:28:54 helm upgrade --install -n default golang-redis-app ./golang-redis-app-chart
+  913  2025-09-27 09:29:03 kubectl get po
+  914  2025-09-27 09:33:07 ls
+  915  2025-09-27 09:33:20 helm dependency update
+  916  2025-09-27 09:33:25 ls
+  917  2025-09-27 09:33:36 cd golang-redis-app-chart/
+  918  2025-09-27 09:33:39 helm dependency update
+  919  2025-09-27 09:34:09 ls
+  920  2025-09-27 09:34:12 cd ..
+  921  2025-09-27 09:34:14 helm package golang-redis-app-chart
+  922  2025-09-27 09:34:34 ls
+  923  2025-09-27 09:34:41 rm golang-redis-app-chart
+  924  2025-09-27 09:34:55 rm golang-redis-app-chart-0.1.0.tgz 
+  925  2025-09-27 09:34:58 cd golang-redis-app-chart/
+  926  2025-09-27 09:36:05 св юю
+  927  2025-09-27 09:36:06 cd ..
+  928  2025-09-27 09:36:22 helm package golang-redis-app-chart
+  929  2025-09-27 09:36:51 helm push golang-redis-app-chart-0.2.0.tgz  oci://registry-1.docker.io/kadannr
+  930  2025-09-27 09:37:04 helm upgrade --install -n default golang-redis-app   oci://registry-1.docker.io/[dockerhub login]/golang-redis-app-chart --version 0.2.0
+  931  2025-09-27 09:37:13 helm upgrade --install -n default golang-redis-app   oci://registry-1.docker.io/kadannr/golang-redis-app-chart --version 0.2.0
+  932  2025-09-27 09:40:10 kubectl get po
+  933  2025-09-27 09:41:01 nslookup kadannr.online
+  934  2025-09-27 09:42:01 cmatrix
+  935  2025-09-27 10:26:50 nslookup kadannr.online
+  936  2025-09-27 16:31:50 kubect get po
+  937  2025-09-27 16:31:57 kubectl get po
+  938  2025-09-27 16:32:20 kubectl port-forward golang-redis-app-master-0 8080:8081
+  939  2025-09-27 16:32:33 kubectl get po
+  940  2025-09-27 16:42:18 kubectl port-forward golang-redis-app-master-0 8080:8081
+  941  2025-09-27 16:42:29 kubectl get po -ф
+  942  2025-09-27 16:42:31 kubectl get po -a
+  943  2025-09-27 16:42:33 kubectl get po -A
+  944  2025-09-27 16:44:26 kubectl port-forward golang-redis-app-master-0 6379:6379
+  945  2025-09-27 16:45:51 kubectl port-forward service/golang-redis-app-master-0 6379:6379
+  946  2025-09-27 16:45:58 kubectl get po -A
+  947  2025-09-27 16:46:03 kubectl get po
+  948  2025-09-27 16:46:10 kubectl port-forward golang-redis-app-master-0 6379:6379
+  949  2025-09-27 16:46:31 redis-cli -p 6379
+  950  2025-09-27 16:46:55 kubectl port-forward service/golang-redis-app 8080:8080
+  951  2025-09-27 16:47:28 kubectl port-forward golang-redis-app-master-0 8080:8080
+  952  2025-09-27 16:47:38 kubectl port-forward golang-redis-app-master-0 8080:8081
+  953  2025-09-27 16:47:45 kubectl port-forward golang-redis-app-master-0 8081:8080
+  954  2025-09-27 16:48:32 kubectl get service
+  955  2025-09-27 16:49:05 kubectl port-forward service/golang-redis-app 8080:8080
+  956  2025-09-27 16:49:38 kubectl port-forward service/golang-redis-app 8081:8080
+  957  2025-09-27 16:49:48 kubectl port-forward service/golang-redis-app 8083:8080
+  958  2025-09-27 16:50:02 kubectl get po
+  959  2025-09-27 16:50:26 kubectl port-forward service/golang-redis-app 8084:8080
+  960  2025-09-27 16:51:07 kubectl describe pod golang-redis-app-deployment-8458cd948d-9j5zg
+  961  2025-09-27 16:51:53 docker image ls
+  962  2025-09-27 16:53:57 vim bash_image
+  963  2025-09-27 16:54:22 chmod -r bash_image 
+  964  2025-09-27 16:54:24 ./bash_image 
+  965  2025-09-27 16:56:50 Sudo poweroff -n
+  966  2025-09-27 16:56:54 sudo poweroff -n
+  967  2025-10-09 10:27:09 sudo nvim /etc/hostname
+  968  2025-10-09 10:28:01 sudo nvim /etc/hosts
+  969  2025-10-09 10:28:29 hostnamectl 
+  970  2025-10-09 10:28:47 sudo hostname tp582
+  971  2025-10-09 10:28:49 hostnamectl 
+  972  2025-10-09 10:29:04 sudo reboot -n
+  973  2025-10-09 10:56:13 curl 2ip.ru
+  974  2025-10-09 12:08:53 сдуфк
+  975  2025-10-09 12:08:56 ckear
+  976  2025-10-09 12:09:28 history 500 | grep strongswan 
+  977  2025-10-09 12:09:46 history 500 > strongswan_find 
+  978  2025-10-09 12:10:24 grep -n5 strongswan_find 
+  979  2025-10-09 12:11:17 grep -A 3 -B 3 strongswan_find 
+  980  2025-10-09 12:11:41 grep -A 3 -B 3 "strongswan" strongswan_find 
+  981  2025-10-26 15:52:59 sudo apt update
+  982  2025-10-26 15:53:27 cat /etc/os-release 
+  983  2025-11-03 08:57:17 curl localhost:9100/metrics
+  984  2025-11-03 09:42:57 cat main.go 
+  985  2025-11-03 09:44:03 cp main.go_backup
+  986  2025-11-03 09:44:18 cp main.go main.go_backup
+  987  2025-11-03 09:44:23 nvim main.go
+  988  2025-11-03 09:48:28 ls
+  989  2025-11-03 09:48:35 cat Dockerfile 
+  990  2025-11-03 09:53:02 kubectl get po -A
+  991  2025-11-03 09:53:51 docker build -t golang-redis-app:0.0.2 -f Dockerfile.txt .
+  992  2025-11-03 09:54:38 mc
+  993  2025-11-03 10:17:47 ./Chart.yaml
+  994  2025-11-03 10:19:37 cat Dockerfile_backup 
+  995  2025-11-03 10:19:57 cat Dockerfile
+  996  2025-11-03 10:21:09 nvim Dockerfile
+  997  2025-11-03 10:22:37 docker build -t golang-redis-app:0.0.2 -f Dockerfile .
+  998  2025-11-03 10:22:53 nvim Dockerfile
+  999  2025-11-03 10:23:13 mc
+ 1000  2025-11-03 10:23:52 docker build -t golang-redis-app:0.0.2 -f Dockerfile .
+ 1001  2025-11-03 10:32:59 docker images | grep golang-redis-app
+ 1002  2025-11-03 10:35:55 git config -l
+ 1003  2025-11-03 10:36:20 docker build -t kadannr/golang-redis-app:0.0.2 -f Dockerfile .
+ 1004  2025-11-03 10:36:26 docker images | grep golang-redis-app
+ 1005  2025-11-03 10:36:43 docker image remove golang-redis-app:0.0.2 
+ 1006  2025-11-03 10:36:47 docker images | grep golang-redis-app
+ 1007  2025-11-03 10:37:05 docker image remove kadannrheim/golang-redis-app:0.0.1 
+ 1008  2025-11-03 10:37:07 docker images | grep golang-redis-app
+ 1009  2025-11-03 10:40:04 helm upgrade kadannr/golang-redis-app ./golang-redis-app -n default
+ 1010  2025-11-03 10:40:24 helm upgrade kadannr/golang-redis ./golang-redis-app -n default
+ 1011  2025-11-03 10:40:33 helm upgrade kadannr/golang-deployment ./golang-redis-app -n default
+ 1012  2025-11-03 10:40:49 mc
+ 1013  2025-11-03 10:56:57 kubectl get secret -n monitoring kube-prometheus-stack-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+ 1014  2025-11-03 10:58:35 helm upgrade golang-redis-app ./golang-redis-app -n default
+ 1015  2025-11-03 10:58:40 ды
+ 1016  2025-11-03 10:58:41 ls
+ 1017  2025-11-03 11:00:32 tar --totals -cvf golang-redis-app-chart031125.tar ./golang-redis-app-chart
+ 1018  2025-11-03 11:00:41 mc
+ 1019  2025-11-03 11:01:05 ls
+ 1020  2025-11-03 11:01:19 helm upgrade kadannr/golang-redis-app ./golang-redis-app-chart -n default
+ 1021  2025-11-03 11:01:54 helm upgrade golang-redis-app ./golang-redis-app-chart -n default
+ 1022  2025-11-03 11:02:25 helm list -A
+ 1023  2025-11-03 11:49:00 kubectl port-forward svc/golang-redis-app 8080:8080 -n default
+ 1024  2025-11-03 11:49:18 kubectl get po -A
+ 1025  2025-11-03 11:50:08 kubectl get pods -n default -l app=golang-redis-app
+ 1026  2025-11-03 11:51:23 history > history.txt

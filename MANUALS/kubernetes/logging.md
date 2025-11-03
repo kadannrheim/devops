@@ -13,7 +13,7 @@ helm repo update
 helm install -n monitoring kube-prometheus-stack prometheus-community/kube-prometheus-stack
 ```
 
-# Прокидываем порт
+# Прокидываем порт графаны
 `kubectl port-forward svc/kube-prometheus-stack-grafana 1080:80 -n monitoring`
 
 # Переходим на localhost:1080 
@@ -24,4 +24,37 @@ helm install -n monitoring kube-prometheus-stack prometheus-community/kube-prome
 ```bash
 kubectl get secrets -n monitoring
 kubectl get secret -n monitoring kube-prometheus-stack-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+```
+
+# Для интерфейса смого прометеус
+`kubectl port-forward svc/prometheus-operated 9090:9090 -n monitoring`
+
+
+# grafana
+Grafana - это мощный инструмент для визуализации и анализа данных, который поддерживает множество источников данных и предлагает широкий спектр опций для создания информативных и привлекательных дашбордов.
+
+Вот некоторые из интересных функций Grafana:
+
+Поддержка множества источников данных: Grafana поддерживает множество различных источников данных, включая, но не ограничиваясь, такими как Graphite, InfluxDB, Logstash, Elasticsearch, CloudWatch, Prometheus и многими другими.
+
+Панели и графики: Grafana позволяет создавать различные виды панелей, включая графики, гистограммы, тепловые карты, графы и т.д., с множеством настроек для каждого типа.
+
+Алерты: Grafana позволяет настраивать алерты на основе данных, которые вы отслеживаете. Вы можете получать уведомления через различные каналы, такие как email, Slack или вебхуки.
+
+Аннотации: Вы можете добавлять аннотации к графикам, чтобы отметить важные события или изменения.
+
+Плагины: Grafana имеет активное сообщество, которое разрабатывает и поддерживает множество плагинов, позволяющих расширить функциональность Grafana.
+
+Шаблоны и переменные: Grafana позволяет создавать динамические дашборды с использованием шаблонов и переменных, что делает его гибким инструментом для визуализации данных.
+
+Безопасность и доступ: Grafana предлагает настройки безопасности и управления доступом, позволяющие контролировать, кто может видеть и редактировать дашборды.
+
+API: Grafana предоставляет API, которое можно использовать для автоматизации различных задач, таких как создание дашбордов, настройка источников данных и т.д.
+
+# loki - система логирования, которая была разработана для эффективного сбора логов
+Создадим файл loki-values.yaml и выполним:
+```bash
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+helm upgrade --install -f loki-values.yaml loki --version 5.15.0 grafana/loki -n logging
 ```
