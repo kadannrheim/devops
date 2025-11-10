@@ -29,6 +29,7 @@ terraform.rc
 # Игнорировать архивы
 *.tar
 *.tgz
+*.7z
 
 # Игнорировать backup
 *_backup

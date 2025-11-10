@@ -1,0 +1,20 @@
+config:
+  clientID: "Ov23lipaP7gDyxrpa6i2"
+  clientSecret: "314c32b37b10f917e8c4ad204ba9a902baf911e6"
+  cookieSecret: "aUC89k0uFbLQ/r7bPQaLVF2I3X3kWNz5"
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+  hosts:
+    - oauth2-proxy-1074779.radost.ru  # ← УНИКАЛЬНЫЙ поддомен для oauth2-proxy
+  tls:
+    - secretName: oauth-proxy-tls
+      hosts:
+        - oauth2-proxy-1074779.radost.ru # СОВПАДАЕТ С ТЕМ ЧТО ВЫШЕ
+extraArgs:
+  provider: github
+  whitelist-domain: .radost.ru
+  cookie-domain: .radost.ru
+    #  redirect-url: "https://oauth2-proxy-1074779.radost.ru/oauth2/callback"  # ← ДОБАВИЛ ЭТУ СТРОКУ
