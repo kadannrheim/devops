@@ -1,0 +1,16 @@
+controller:
+  config:
+    # Disable strict path validation, to work around a bug in ingress-nginx
+    # https://github.com/kubernetes/ingress-nginx/issues/11176
+    strict-validate-path-type: false
+    # Enable PROXY protocol support for OVH load balancers
+    use-proxy-protocol: true
+  service:
+    annotations:
+      # Enable PROXY protocol v2 on OVH OpenStack load balancer
+      loadbalancer.openstack.org/proxy-protocol: v2
+admissionWebhooks:
+  patch:
+    image:
+      repository: jettech/kube-webhook-certgen
+      tag: v1.5.4

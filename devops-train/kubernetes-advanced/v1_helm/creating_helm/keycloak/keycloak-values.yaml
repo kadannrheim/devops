@@ -1,0 +1,30 @@
+auth:
+  adminUser: admin
+  adminPassword: password901
+
+ingress:
+  enabled: true
+  ingressClassName: "nginx"
+  pathType: ImplementationSpecific
+  apiVersion: ""
+  hostname: keycloak-1074779.radost.ru
+  path: /
+  servicePort: http
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/proxy-buffer-size: 128k
+    nginx.ingress.kubernetes.io/proxy-cookie-path: "off"
+    use-forwarded-headers: "true"
+  tls: true
+  selfSigned: false
+
+extraEnvVars:
+- name: KC_HOSTNAME
+  value: keycloak-1074779.radost.ru
+- name: KC_HOSTNAME_STRICT_HTTPS
+  value: "true"
+- name: KEYCLOAK_PROXY
+  value: edge
+- name: KC_HOSTNAME_ADMIN_URL
+  value: keycloak-1074779.radost.ru/
