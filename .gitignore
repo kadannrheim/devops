@@ -14,6 +14,7 @@ crash.log
 
 # Игнорировать планы Terraform
 *.tfplan
+*terraform-provider*
 
 # Игнорировать файлы переменных (если используются)
 *.tfvars

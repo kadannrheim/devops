@@ -1,15 +1,34 @@
+# keycloak-values.yaml
+
 auth:
   adminUser: admin
   adminPassword: password901
 
+image:
+  registry: docker.io
+  repository: bitnamilegacy/keycloak
+  tag: 24.0.5
+  pullPolicy: IfNotPresent
+
+postgresql:
+  enabled: true
+  image:
+    registry: docker.io
+    repository: bitnamilegacy/postgresql
+    tag: 15.5.0
+  persistence:
+    enabled: false
+  auth:
+    postgresPassword: keycloak
+    password: keycloak
+    database: keycloak
+    username: postgres
+
 ingress:
   enabled: true
-  ingressClassName: "nginx"
-  pathType: ImplementationSpecific
-  apiVersion: ""
+  ingressClassName: nginx
   hostname: keycloak-1074779.radost.ru
   path: /
-  servicePort: http
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     ingress.kubernetes.io/affinity: cookie
@@ -17,14 +36,41 @@ ingress:
     nginx.ingress.kubernetes.io/proxy-cookie-path: "off"
     use-forwarded-headers: "true"
   tls: true
-  selfSigned: false
 
+# 🔥 ПРАВИЛЬНЫЕ переменные для Bitnami чарта
 extraEnvVars:
-- name: KC_HOSTNAME
-  value: keycloak-1074779.radost.ru
-- name: KC_HOSTNAME_STRICT_HTTPS
-  value: "true"
-- name: KEYCLOAK_PROXY
-  value: edge
-- name: KC_HOSTNAME_ADMIN_URL
-  value: keycloak-1074779.radost.ru/
+  # Администратор
+  - name: KEYCLOAK_ADMIN
+    value: admin
+  - name: KEYCLOAK_ADMIN_PASSWORD
+    value: password901
+  
+  # 🔥 Bitnami использует эти переменные для подключения к PostgreSQL
+  - name: POSTGRESQL_HOST
+    value: keycloak-postgresql
+  - name: POSTGRESQL_PORT
+    value: "5432"
+  - name: POSTGRESQL_DATABASE
+    value: keycloak
+  - name: POSTGRESQL_USER
+    value: postgres
+  - name: POSTGRESQL_PASSWORD
+    value: keycloak
+  
+  # Настройки хоста
+  - name: KC_HOSTNAME
+    value: keycloak-1074779.radost.ru
+  - name: KC_HOSTNAME_STRICT
+    value: "false"
+  - name: KC_PROXY
+    value: edge
+  - name: KC_HTTP_ENABLED
+    value: "true"
+
+resources:
+  requests:
+    memory: 512Mi
+    cpu: 250m
+  limits:
+    memory: 1Gi
+    cpu: 1000m
