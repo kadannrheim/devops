@@ -33,3 +33,6 @@ terraform.rc
 
 # Игнорировать backup
 *_backup
+
+# Файлы VIsual Studio Code
+.vscode/
